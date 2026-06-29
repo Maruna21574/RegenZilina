@@ -40,11 +40,8 @@
 
 <table width="100%" cellpadding="0" cellspacing="0">
     <tr>
-        <td style="padding: 8px;" width="50%">
-            <a href="{{ url('/admin/rezervacie/' . $reservation->id . '/potvrdit') }}" style="display: block; background-color: #173124; color: #C9A96E; text-decoration: none; text-align: center; padding: 14px 24px; border-radius: 6px; font-size: 14px; font-weight: 600;">Potvrdiť rezerváciu</a>
-        </td>
-        <td style="padding: 8px;" width="50%">
-            <a href="{{ url('/admin/rezervacie/' . $reservation->id . '/zrusit') }}" style="display: block; background-color: #dc3545; color: #ffffff; text-decoration: none; text-align: center; padding: 14px 24px; border-radius: 6px; font-size: 14px; font-weight: 600;">Zrušiť rezerváciu</a>
+        <td style="padding: 8px; text-align: center;">
+            <a href="{{ url('/admin/rezervacie?status=pending') }}" style="display: inline-block; background-color: #6B7F5E; color: #ffffff; text-decoration: none; text-align: center; padding: 14px 32px; border-radius: 6px; font-size: 14px; font-weight: 600;">Zobraziť v admin paneli</a>
         </td>
     </tr>
 </table>
