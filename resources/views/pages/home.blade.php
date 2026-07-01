@@ -16,7 +16,6 @@
     </div>
     <div class="container hero-video__inner">
         <div class="hero-video__content">
-            <span class="hero-video__label anim-fade">REGEN ŽILINA</span>
             <h1 class="hero-video__title anim-fade" data-delay="1">
                 Doprajte svojmu telu<br><span>čo si zaslúži</span>
             </h1>
@@ -50,6 +49,52 @@
     </div>
 </section>
 
+<section class="section section--dark">
+    <div class="container">
+        <div class="section__head anim-reveal">
+            <span class="label">Naše služby</span>
+            <h2 class="h2">Čo pre vás môžeme urobiť</h2>
+        </div>
+        <div class="services-preview">
+            @foreach($mainServices as $i => $service)
+            <a href="{{ route('services') }}" class="sp-card anim-reveal" data-delay="{{ $i }}">
+                <span class="sp-card__num">0{{ $i + 1 }}</span>
+                <h3 class="sp-card__title">{{ $service->name }}</h3>
+                <p class="sp-card__text">{{ $service->description }}</p>
+                <div class="sp-card__footer">
+                    <span class="sp-card__meta">{{ $service->duration }} min</span>
+                    <span class="sp-card__price">{{ number_format($service->price, 0) }}€</span>
+                </div>
+                <div class="sp-card__arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </div>
+            </a>
+            @endforeach
+        </div>
+        <div class="section__action anim-reveal">
+            <a href="{{ route('services') }}" class="btn btn--primary">Všetky služby</a>
+        </div>
+    </div>
+</section>
+
+{{-- TEXT MARQUEE --}}
+<div class="text-marquee">
+    <div class="text-marquee__track">
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Skoncujte s bolesťou</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Výmenný lístok nie je potrebný</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vyšší level zdravotnej starostlivosti</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Úprimná snaha pomôcť</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bez čakania, na objednávku</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Individuálny prístup</span>
+        {{-- duplikácia --}}
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Skoncujte s bolesťou</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Výmenný lístok nie je potrebný</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vyšší level zdravotnej starostlivosti</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Úprimná snaha pomôcť</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bez čakania, na objednávku</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Individuálny prístup</span>
+    </div>
+</div>
 
 {{-- VIZUALIZÁCIA MASÁŽE --}}
 <section class="section section--green massage-viz">
@@ -138,35 +183,6 @@
 </section>
 
 
-
-<section class="section section--dark">
-    <div class="container">
-        <div class="section__head anim-reveal">
-            <span class="label">Naše služby</span>
-            <h2 class="h2">Čo pre vás môžeme urobiť</h2>
-        </div>
-        <div class="services-preview">
-            @foreach($mainServices as $i => $service)
-            <a href="{{ route('services') }}" class="sp-card anim-reveal" data-delay="{{ $i }}">
-                <span class="sp-card__num">0{{ $i + 1 }}</span>
-                <h3 class="sp-card__title">{{ $service->name }}</h3>
-                <p class="sp-card__text">{{ $service->description }}</p>
-                <div class="sp-card__footer">
-                    <span class="sp-card__meta">{{ $service->duration }} min</span>
-                    <span class="sp-card__price">{{ number_format($service->price, 0) }}€</span>
-                </div>
-                <div class="sp-card__arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-            </a>
-            @endforeach
-        </div>
-        <div class="section__action anim-reveal">
-            <a href="{{ route('services') }}" class="btn btn--primary">Všetky služby</a>
-        </div>
-    </div>
-</section>
-
 {{-- TESTIMONIALS --}}
 <section class="testimonials">
     <div class="container">
@@ -253,36 +269,6 @@
     </div>
 </section>
 
-<section class="cta">
-    <div class="container">
-        <div class="cta__inner anim-reveal">
-            <h2 class="cta__title">Pripravení na zmenu?</h2>
-            <p class="cta__text">Rezervujte si termín a urobte prvý krok k životu bez bolesti.</p>
-            <a href="{{ route('booking') }}" class="btn btn--primary btn--lg">
-                <span>Rezervovať termín</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-    </div>
-</section>
 
-{{-- TEXT MARQUEE --}}
-<div class="text-marquee">
-    <div class="text-marquee__track">
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Skoncujte s bolesťou</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Výmenný lístok nie je potrebný</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vyšší level zdravotnej starostlivosti</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Úprimná snaha pomôcť</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bez čakania, na objednávku</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Individuálny prístup</span>
-        {{-- duplikácia --}}
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Skoncujte s bolesťou</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Výmenný lístok nie je potrebný</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vyšší level zdravotnej starostlivosti</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Úprimná snaha pomôcť</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bez čakania, na objednávku</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Individuálny prístup</span>
-    </div>
-</div>
 
 @endsection

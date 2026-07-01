@@ -8,8 +8,10 @@ use App\Models\BlockedSlot;
 use App\Models\DiscountCode;
 use App\Models\Reservation;
 use App\Models\Service;
+use Illuminate\Contracts\Cache\LockTimeoutException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
 
 class ReservationController extends Controller
@@ -81,11 +83,17 @@ class ReservationController extends Controller
         ]);
 
         if (!empty($validated['discount_code'])) {
-            $discount = DiscountCode::where('code', $validated['discount_code'])->first();
-            if ($discount && $discount->isValid()) {
-                $validated['discount_percent'] = $discount->percent;
-                $discount->update(['used' => true, 'used_by_email' => $validated['email']]);
-            } else {
+            try {
+                Cache::lock('discount-code-' . strtoupper($validated['discount_code']), 10)->block(5, function () use (&$validated) {
+                    $discount = DiscountCode::where('code', $validated['discount_code'])->first();
+                    if ($discount && $discount->isValid()) {
+                        $validated['discount_percent'] = $discount->percent;
+                        $discount->update(['used' => true, 'used_by_email' => $validated['email']]);
+                    } else {
+                        unset($validated['discount_code']);
+                    }
+                });
+            } catch (LockTimeoutException $e) {
                 unset($validated['discount_code']);
             }
         }
@@ -95,37 +103,44 @@ class ReservationController extends Controller
             return response()->json(['message' => 'V nedeľu nepracujeme.'], 422);
         }
 
-        $isBlocked = BlockedSlot::where('date', $validated['date'])
-            ->where(function ($q) use ($validated) {
-                $q->whereNull('time')->orWhere('time', $validated['time']);
-            })->exists();
-
-        if ($isBlocked) {
-            return response()->json(['message' => 'Tento termín nie je dostupný.'], 422);
-        }
-
-        $isTaken = Reservation::where('date', $validated['date'])
-            ->where('time', $validated['time'])
-            ->whereIn('status', ['pending', 'confirmed'])
-            ->exists();
-
-        if ($isTaken) {
-            return response()->json(['message' => 'Tento termín je už obsadený.'], 422);
-        }
-
-        $reservation = Reservation::create($validated);
-        $reservation->load('service');
-
         try {
-            Mail::to($reservation->email)->send(new ReservationReceived($reservation));
-            Mail::to(config('mail.from.address'))->send(new ReservationAdminNotify($reservation));
-        } catch (\Exception $e) {
-            // Mail failure should not block reservation
-        }
+            return Cache::lock('reservation-slot-' . $validated['date'] . '-' . $validated['time'], 10)
+                ->block(5, function () use ($validated) {
+                    $isBlocked = BlockedSlot::where('date', $validated['date'])
+                        ->where(function ($q) use ($validated) {
+                            $q->whereNull('time')->orWhere('time', $validated['time']);
+                        })->exists();
 
-        return response()->json([
-            'message' => 'Rezervácia bola úspešne odoslaná! Čoskoro vás kontaktujeme.',
-            'reservation' => $reservation,
-        ]);
+                    if ($isBlocked) {
+                        return response()->json(['message' => 'Tento termín nie je dostupný.'], 422);
+                    }
+
+                    $isTaken = Reservation::where('date', $validated['date'])
+                        ->where('time', $validated['time'])
+                        ->whereIn('status', ['pending', 'confirmed'])
+                        ->exists();
+
+                    if ($isTaken) {
+                        return response()->json(['message' => 'Tento termín je už obsadený.'], 422);
+                    }
+
+                    $reservation = Reservation::create($validated);
+                    $reservation->load('service');
+
+                    try {
+                        Mail::to($reservation->email)->send(new ReservationReceived($reservation));
+                        Mail::to(config('mail.from.address'))->send(new ReservationAdminNotify($reservation));
+                    } catch (\Exception $e) {
+                        // Mail failure should not block reservation
+                    }
+
+                    return response()->json([
+                        'message' => 'Rezervácia bola úspešne odoslaná! Čoskoro vás kontaktujeme.',
+                        'reservation' => $reservation,
+                    ]);
+                });
+        } catch (LockTimeoutException $e) {
+            return response()->json(['message' => 'Tento termín práve spracováva iná rezervácia, skúste to prosím znova.'], 422);
+        }
     }
 }

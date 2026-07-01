@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('title', 'Kontakt — REGEN ŽILINA | Masáže v centre Žiliny')
-@section('meta_description', 'Kontaktujte REGEN ŽILINA — Horný val 10, 010 01 Žilina. Telefón, email, otváracie hodiny a mapa. Objednajte sa na masáž ešte dnes.')
-@section('meta_keywords', 'kontakt masáže Žilina, REGEN ŽILINA adresa, masáže Horný val Žilina, telefón masér Žilina, objednať sa na masáž')
+@section('meta_description', 'Kontaktujte REGEN ŽILINA — J. M. Hurbana 4, Žilina 01001. Telefón, email, otváracie hodiny a mapa. Objednajte sa na masáž ešte dnes.')
+@section('meta_keywords', 'kontakt masáže Žilina, REGEN ŽILINA adresa, masáže J. M. Hurbana Žilina, telefón masér Žilina, objednať sa na masáž')
 
 @section('content')
 
-<section class="page-hero page-hero--short">
+<section class="page-hero page-hero--short" style="background-image: url('{{ asset("img/pexels-koolshooters-6628615.webp") }}')">
     <div class="container">
         <span class="label label--light anim-fade">Kontakt</span>
         <h1 class="page-hero__title anim-fade" data-delay="1">Spojte sa<br><span>s nami</span></h1>
@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <strong>Adresa</strong>
-                        <p>Horný val 10, 010 01 Žilina</p>
+                        <p>J. M. Hurbana 4, Žilina 01001</p>
                     </div>
                 </div>
                 <div class="contact-info__item">
@@ -54,6 +54,7 @@
                 </div>
             </div>
             <div class="contact-form-wrap anim-reveal" data-delay="1">
+                <h3>Napíšte nám</h3>
                 <form id="contactForm" class="contact-form">
                     @csrf
                     <div class="form-group">
@@ -79,7 +80,7 @@
 </section>
 
 <section class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2601.5!2d18.7408!3d49.2233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDEzJzI0LjAiTiAxOMKwNDQnMjcuMCJF!5e0!3m2!1ssk!2ssk!4v1" width="100%" height="450" style="border:0;display:block;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.69155306528!2d18.737427713390687!3d49.22537647468947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47145ea7866c4463%3A0x1bb4c8da0a9203e2!2sJ.%20M.%20Hurbana%20348%2F4%2C%20010%2001%20%C5%BDilina%2C%20Slovensko!5e0!3m2!1ssk!2sus!4v1782917040183!5m2!1ssk!2sus" width="100%" height="450" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </section>
 
 @endsection

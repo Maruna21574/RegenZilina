@@ -102,6 +102,7 @@
 <body>
     <div class="login-card">
         <img src="{{ asset('img/logo_regen_def.webp') }}" alt="REGEN ŽILINA" class="login-logo">
+        <h1>REGEN ŽILINA</h1>
         <p>Prihlásenie do administrácie</p>
 
         @if($errors->any())

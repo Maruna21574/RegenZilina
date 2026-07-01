@@ -4,7 +4,7 @@
    ===================================================== */
 
 :root {
-    --green: #6B7F5E;
+    --green: #53614a;
     --green-light: #7d9270;
     --green-lighter: #95a88a;
     --green-pale: #e4ebe0;
@@ -12,8 +12,8 @@
     --cream: white;
     --gold: #C9A96E;
     --text: #1a1a1a;
-    --text-secondary: #5a5a5a;
-    --text-muted: #8a8a8a;
+    --text-secondary: #232323;
+    --text-muted: #3f3f3f;
     --border: #e5e5e5;
     --white: #ffffff;
 
@@ -289,7 +289,7 @@ button { font-family: inherit; }
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--green);
     margin-top: 24px;
@@ -544,7 +544,9 @@ button { font-family: inherit; }
    PAGE HERO (inner pages)
    ===================================================== */
 .page-hero {
-    background: var(--green);
+    background-color: var(--green);
+    background-size: cover;
+    background-position: center;
     padding-top: 190px;
     padding-bottom: 80px;
     position: relative;
@@ -561,6 +563,20 @@ button { font-family: inherit; }
     filter: blur(120px);
     top: -200px;
     right: -100px;
+    z-index: 1;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20, 46, 35, 0.86), rgba(20, 46, 35, 0.8));
+    z-index: 1;
+}
+
+.page-hero > .container {
+    position: relative;
+    z-index: 2;
 }
 
 .page-hero__title {
@@ -653,7 +669,7 @@ button { font-family: inherit; }
 }
 
 .sp-card__text {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
     color: white;
     flex: 1;
@@ -669,7 +685,7 @@ button { font-family: inherit; }
 }
 
 .sp-card__meta {
-    font-size: 20px;
+    font-size: 18px;
     color: rgba(255,255,255,0.6);
 }
 
@@ -990,7 +1006,7 @@ button { font-family: inherit; }
 }
 
 .addon-card__top h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--green);
 }
@@ -1045,7 +1061,7 @@ button { font-family: inherit; }
 .pricing__row:last-child .pricing__row-inner { border-bottom: none; }
 
 .pricing__row-left h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--green);
     margin-bottom: 4px;
@@ -1235,6 +1251,11 @@ button { font-family: inherit; }
     margin-bottom: 28px;
 }
 
+.booking__date-col,
+.booking__time-col {
+    min-width: 0;
+}
+
 .booking__slots {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1297,7 +1318,7 @@ button { font-family: inherit; }
 .booking__sum-row strong { font-size: 14px; color: var(--green); }
 
 .booking__sum-row--total { margin-top: 8px; padding-top: 16px; border-top: 2px solid var(--green); border-bottom: none; }
-.booking__sum-row--total strong { font-size: 20px; }
+.booking__sum-row--total strong { font-size: 18px; }
 
 .booking__success { text-align: center; padding: 40px 0; }
 .booking__success-icon { color: var(--green); margin-bottom: 24px; }
@@ -1319,6 +1340,7 @@ button { font-family: inherit; }
 
 .form-input {
     width: 100%;
+    min-width: 0;
     padding: 14px 16px;
     background: var(--cream);
     border: 1px solid var(--border);
@@ -1382,7 +1404,7 @@ button { font-family: inherit; }
 
 .contact-info__item strong {
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--green);
     margin-bottom: 4px;
@@ -1392,6 +1414,22 @@ button { font-family: inherit; }
     font-size: 18px;
     color: var(--text-secondary);
     line-height: 1.6;
+}
+
+.contact-form-wrap {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 48px;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.14);
+}
+
+.contact-form-wrap h3 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--green);
+    margin-bottom: 24px;
 }
 
 .contact-form .form-group { margin-bottom: 20px; }
@@ -1448,7 +1486,7 @@ button { font-family: inherit; }
 
 .footer__cta-text p {
     font-size: 18px;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.746);
     line-height: 1.6;
 }
 
@@ -1459,7 +1497,7 @@ button { font-family: inherit; }
 
 .footer__grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 48px;
 }
 
@@ -1677,7 +1715,7 @@ button { font-family: inherit; }
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--green);
+        background: #2c3527;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1706,7 +1744,11 @@ button { font-family: inherit; }
 
 @media (max-width: 768px) {
     .container { padding: 0 20px; }
+    .btn { font-size: 16px; padding: 12px 30px; }
+    .btn--sm { padding: 8px 22px; font-size: 16px; }
     .btn--lg { font-size: 18px; }
+    .link-arrow { font-size: 16px; }
+    .sp-card__text { font-size: 18px; }
 
     .section { padding: 64px 0; }
     .cta { padding: 64px 0; }
@@ -1724,7 +1766,9 @@ button { font-family: inherit; }
     .addon-grid { grid-template-columns: 1fr; }
 
     .booking { padding: 28px 20px; }
+    .contact-form-wrap { padding: 28px 20px; }
     .booking__step-text { display: none; }
+    .booking__step-num { font-size: 16px; }
     .booking__datetime { grid-template-columns: 1fr; }
     .form-grid { grid-template-columns: 1fr; }
 
@@ -1744,7 +1788,16 @@ button { font-family: inherit; }
 
     .page-hero { padding-top: 150px; padding-bottom: 60px; }
 
+    .footer { font-size: 16px; }
     .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer__col h4 { font-size: 16px; }
+    .footer__col a { font-size: 16px; }
+    .footer__col p { font-size: 16px !important; }
+    .footer__bottom { font-size: 14px; }
+    .footer__bottom p { font-size: 14px; }
+    .footer__bottom-links a { font-size: 14px; }
+    .footer__social a { width: 44px; height: 44px; }
+    .footer__social svg { width: 20px; height: 20px; }
     .footer__bottom-inner { flex-direction: column; gap: 12px; text-align: center; }
     .footer__bottom-links { justify-content: center; }
 }
@@ -1978,7 +2031,7 @@ button { font-family: inherit; }
 }
 
 .mviz__phase p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.8;
     color: rgba(255,255,255,0.7);
     max-width: 420px;
@@ -2027,6 +2080,7 @@ button { font-family: inherit; }
     .mviz__svg { max-width: 100%; min-height: 350px; }
     .mviz__controls { flex-direction: column; align-items: center; }
     .mviz__btn { width: 200px; text-align: center; }
+    .mviz__phase p { font-size: 18px; }
 }
 
 /* =====================================================
@@ -2144,7 +2198,7 @@ button { font-family: inherit; }
     .timeline__step-marker { width: 48px; }
     .timeline__step-icon { width: 44px; height: 44px; }
     .timeline__step-icon svg { width: 22px; height: 22px; }
-    .timeline__step-content h3 { font-size: 20px; }
+    .timeline__step-content h3 { font-size: 18px; }
 }
 
 /* =====================================================
@@ -2829,12 +2883,7 @@ button { font-family: inherit; }
 .hero-video__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(107, 127, 94, 0.88) 0%,
-        rgba(107, 127, 94, 0.7) 50%,
-        rgba(107, 127, 94, 0.85) 100%
-    );
+    background: linear-gradient(135deg, rgb(62 75 54 / 88%) 0%, rgb(76 90 66 / 70%) 50%, rgba(107, 127, 94, 0.85) 100%);
 }
 
 .hero-video__inner {
@@ -2870,7 +2919,7 @@ button { font-family: inherit; }
 }
 
 .hero-video__text {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
     color: rgba(255,255,255,0.9);
     max-width: 480px;
@@ -3561,7 +3610,7 @@ button { font-family: inherit; }
 }
 
 .testi__marquee-text {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--text);
     font-style: italic;
     line-height: 1.7;
@@ -3585,7 +3634,8 @@ button { font-family: inherit; }
 
 @media (max-width: 768px) {
     .testimonials { padding: 64px 0; }
-    .testi__marquee-item { min-width: 280px; }
+    .testi__marquee-item { min-width: 280px; padding: 12px 12px; }
+    .testi__marquee-text { font-size: 16px; }
 }
 
 /* =====================================================

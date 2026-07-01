@@ -5,7 +5,7 @@
 
 @section('content')
 
-<section class="page-hero page-hero--short">
+<section class="page-hero page-hero--short" style="background-image: url('{{ asset("img/pexels-koolshooters-6628690.webp") }}')">
     <div class="container">
         <span class="label label--light anim-fade">Cenník</span>
         <h1 class="page-hero__title anim-fade" data-delay="1">Transparentné<br><span>ceny</span></h1>
@@ -38,19 +38,6 @@
                 </div>
                 @endforeach
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="cta">
-    <div class="container">
-        <div class="cta__inner anim-reveal">
-            <h2 class="cta__title">Máte otázky k cenám?</h2>
-            <p class="cta__text">Neváhajte nás kontaktovať — radi vám poradíme s výberom.</p>
-            <a href="{{ route('contact') }}" class="btn btn--primary btn--lg">
-                <span>Kontaktovať nás</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
         </div>
     </div>
 </section>

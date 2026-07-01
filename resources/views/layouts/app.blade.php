@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="{{ asset('img/favicon_regen.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ filemtime(public_path('css/app.css')) }}">
 
     {{-- Structured Data - LocalBusiness --}}
     <script type="application/ld+json">
@@ -47,15 +47,15 @@
         "email": "info@regenzilina.sk",
         "address": {
             "@@type": "PostalAddress",
-            "streetAddress": "Horný val 10",
+            "streetAddress": "J. M. Hurbana 4",
             "addressLocality": "Žilina",
             "postalCode": "010 01",
             "addressCountry": "SK"
         },
         "geo": {
             "@@type": "GeoCoordinates",
-            "latitude": "49.2233",
-            "longitude": "18.7394"
+            "latitude": "49.22537647468947",
+            "longitude": "18.737427713390687"
         },
         "openingHoursSpecification": {
             "@@type": "OpeningHoursSpecification",
@@ -136,18 +136,10 @@
                         <a href="{{ route('booking') }}">Rezervácia</a>
                     </div>
                     <div class="footer__col">
-                        <h4>Služby</h4>
-                        <a href="{{ route('services') }}">REGEN RELAX</a>
-                        <a href="{{ route('services') }}">REGEN SPORT</a>
-                        <a href="{{ route('services') }}">REGEN THERAPY</a>
-                        <a href="{{ route('services') }}">Kineziotejping</a>
-                        <a href="{{ route('services') }}">Maderoterapia</a>
-                    </div>
-                    <div class="footer__col">
                         <h4>Kontakt</h4>
                         <p class="footer__contact-item">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Horný val 10, 010 01 Žilina
+                            J. M. Hurbana 4, Žilina 01001
                         </p>
                         <p class="footer__contact-item">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -163,14 +155,11 @@
                     </div>
                 </div>
                 <div class="footer__social">
-                    <a href="#" aria-label="Instagram">
+                    <a href="https://www.instagram.com/regenzilina" target="_blank" rel="noopener" aria-label="Instagram">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     </a>
-                    <a href="#" aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=61587353300234" target="_blank" rel="noopener" aria-label="Facebook">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                    </a>
-                    <a href="#" aria-label="TikTok">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
                     </a>
                 </div>
             </div>
@@ -226,6 +215,6 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
 </body>
 </html>

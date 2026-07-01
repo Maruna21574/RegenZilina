@@ -12,7 +12,7 @@
                     {{-- Header --}}
                     <tr>
                         <td style="background-color: #173124; padding: 32px 40px; text-align: center;">
-                            <img src="{{ asset('img/logo_regen_def.png') }}" alt="REGEN ŽILINA" style="height: 50px; width: auto; margin-bottom: 12px;">
+                            <img src="{{ asset('img/regen_white.png') }}" alt="REGEN ŽILINA" style="height: 50px; width: auto; margin-bottom: 12px;">
                             <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 13px; letter-spacing: 1px;">Masáže · Regenerácia · Manuálna terapia</p>
                         </td>
                     </tr>
@@ -27,7 +27,7 @@
                         <td style="background-color: #f5f3f0; padding: 24px 40px; text-align: center; border-top: 1px solid #e8e5e0;">
                             <p style="margin: 0 0 8px; color: #8B6F47; font-size: 14px; font-weight: 600;">REGEN ŽILINA</p>
                             <p style="margin: 0; color: #999; font-size: 12px; line-height: 1.6;">
-                                Horný val 10, 010 01 Žilina<br>
+                                J. M. Hurbana 4, Žilina 01001<br>
                                 Tel: <a href="tel:+421910900664" style="color: #999; text-decoration: none;">+421 910 900 664</a> · <a href="mailto:info@regenzilina.sk" style="color: #999; text-decoration: none;">info@regenzilina.sk</a>
                             </p>
                         </td>

@@ -1,3 +1,9 @@
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+// Fix iOS Safari carrying over the old scroll position when navigating to a new page
+window.addEventListener('pagehide', () => window.scrollTo(0, 0));
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
     const CSRF = document.querySelector('meta[name="csrf-token"]')?.content;
 
@@ -6,11 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================================
     const nav = document.getElementById('nav');
 
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-    }, { passive: true });
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+        }, { passive: true });
 
-    if (window.scrollY > 40) nav.classList.add('nav--scrolled');
+        if (window.scrollY > 40) nav.classList.add('nav--scrolled');
+    }
 
     // =============================================
     // SCROLL TO TOP
@@ -172,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('promoCopy')?.addEventListener('click', () => {
             const code = document.getElementById('promoCode').textContent;
-            navigator.clipboard.writeText(code);
+            navigator.clipboard.writeText(code).catch(() => {});
             const btn = document.getElementById('promoCopy');
             btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
             setTimeout(() => {
@@ -213,6 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         currentStep = step;
+
+        const box = bookingForm.closest('.booking') || bookingForm;
+        const top = box.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top, behavior: 'smooth' });
     }
 
     function updateNextBtn(step) {

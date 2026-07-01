@@ -58,6 +58,8 @@ Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.lo
 // Admin protected
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/kalendar', [AdminController::class, 'calendar'])->name('admin.calendar');
+    Route::post('/rezervacie/manualna', [AdminController::class, 'storeManualReservation'])->name('admin.reservation.store-manual');
     Route::get('/rezervacie', [AdminController::class, 'reservations'])->name('admin.reservations');
     Route::post('/rezervacie/{reservation}/potvrdit', [AdminController::class, 'confirmReservation'])->name('admin.reservation.confirm');
     Route::post('/rezervacie/{reservation}/zrusit', [AdminController::class, 'cancelReservation'])->name('admin.reservation.cancel');

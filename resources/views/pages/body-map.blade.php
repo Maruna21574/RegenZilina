@@ -5,7 +5,7 @@
 
 @section('content')
 
-<section class="page-hero page-hero--short">
+<section class="page-hero page-hero--short" style="background-image: url('{{ asset("img/pexels-joaojesusdesign-28783977.webp") }}')">
     <div class="container">
         <span class="label label--light anim-fade">Interaktívny sprievodca</span>
         <h1 class="page-hero__title anim-fade" data-delay="1">Ukážte nám,<br><span>čo vás bolí</span></h1>
@@ -196,19 +196,6 @@
     </div>
 </section>
 
-<section class="cta">
-    <div class="container">
-        <div class="cta__inner anim-reveal">
-            <h2 class="cta__title">Neviete si vybrať?</h2>
-            <p class="cta__text">Kontaktujte nás a poradíme vám najvhodnejšiu procedúru.</p>
-            <a href="{{ route('contact') }}" class="btn btn--primary btn--lg">
-                <span>Kontaktovať nás</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-    </div>
-</section>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const zones = {
@@ -363,6 +350,12 @@ document.addEventListener('DOMContentLoaded', () => {
             panelContent.style.display = 'block';
             panelContent.classList.add('bodymap__panel-content--enter');
             setTimeout(() => panelContent.classList.remove('bodymap__panel-content--enter'), 400);
+
+            if (window.innerWidth <= 1024) {
+                const panelEl = document.getElementById('bodymapPanel');
+                const top = panelEl.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
         });
     });
 

@@ -5,7 +5,7 @@
 
 @section('content')
 
-<section class="page-hero page-hero--short">
+<section class="page-hero page-hero--short" style="background-image: url('{{ asset("img/pexels-joaojesusdesign-28783977.webp") }}')">
     <div class="container">
         <span class="label label--light anim-fade">Rezervácia</span>
         <h1 class="page-hero__title anim-fade" data-delay="1">Vyberte si<br><span>svoj termín</span></h1>

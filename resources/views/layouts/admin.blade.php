@@ -32,6 +32,7 @@
             background: var(--cream);
             color: #333;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .admin { display: flex; min-height: 100vh; }
@@ -127,6 +128,7 @@
 
         .main {
             flex: 1;
+            min-width: 0;
             margin-left: var(--sidebar-w);
             padding: 32px;
         }
@@ -351,6 +353,111 @@
             padding: 10px;
         }
 
+        /* Calendar */
+        .cal-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
+
+        .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        .cal-nav h3 { font-size: 16px; font-weight: 700; color: var(--primary); text-transform: capitalize; }
+
+        .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; min-width: 0; }
+
+        .cal-grid__weekday {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            padding-bottom: 6px;
+        }
+
+        .cal-day {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            aspect-ratio: 1;
+            min-width: 0;
+            border-radius: 10px;
+            background: #f7f6f4;
+            text-decoration: none;
+            color: var(--primary);
+            padding: 6px 4px;
+            border: 2px solid transparent;
+            transition: all 0.15s;
+            overflow: hidden;
+        }
+
+        .cal-day:hover { background: #eee; }
+        .cal-day--empty { background: transparent; }
+        .cal-day--today { border-color: var(--green-light); }
+        .cal-day--selected { background: var(--primary); color: #fff; }
+        .cal-day--closed { opacity: 0.45; }
+
+        .cal-day__num { font-size: 13px; font-weight: 600; }
+
+        .cal-day__dots { display: flex; gap: 3px; flex-wrap: wrap; justify-content: center; }
+
+        .cal-day__dot {
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cal-day__dot--pending { background: var(--warning); color: #7a5c00; }
+        .cal-day__dot--confirmed { background: var(--success); }
+
+        .cal-day__closed-label {
+            font-size: 7px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #c0392b;
+            white-space: normal;
+            word-break: break-word;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .cal-day-panel { min-height: 200px; }
+
+        .cal-res-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+        .cal-res-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f7f6f4;
+            border-radius: 10px;
+        }
+
+        .cal-res-item__time { font-size: 14px; font-weight: 700; color: var(--primary); flex-shrink: 0; }
+        .cal-res-item__body { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+        .cal-res-item__top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .cal-res-item__meta { font-size: 12px; color: #999; margin-top: 2px; overflow-wrap: anywhere; }
+        .cal-res-item__actions { display: flex; flex-direction: column; gap: 6px; }
+
+        .cal-add { border-top: 1px solid #f0f0f0; padding-top: 16px; }
+        .cal-add summary {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--green);
+            list-style: none;
+        }
+        .cal-add summary::-webkit-details-marker { display: none; }
+        .cal-add__form { margin-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+        .cal-add__form .form-row { gap: 12px; }
+        .cal-add__form .form-group-admin { flex: 1; min-width: 140px; }
+        .cal-add__form input, .cal-add__form select { width: 100%; }
+
         @media (max-width: 768px) {
             .mobile-toggle { display: block; }
             .sidebar { transform: translateX(-100%); }
@@ -370,6 +477,14 @@
             .res-cards { display: block; }
 
             .btn-sm { font-size: 14px; padding: 10px 16px; }
+
+            .cal-layout { grid-template-columns: 1fr; }
+            .cal-day__num { font-size: 12px; }
+            .cal-day__dot { width: 14px; height: 14px; font-size: 9px; }
+            .cal-res-item { flex-wrap: wrap; }
+            .cal-res-item__actions { flex-direction: row; width: 100%; }
+            .cal-res-item__actions form { flex: 1; }
+            .cal-res-item__actions .btn-sm { width: 100%; justify-content: center; }
         }
 
         @media (max-width: 380px) {
@@ -391,6 +506,10 @@
                 <a href="{{ route('admin.dashboard') }}" class="sidebar__link {{ request()->routeIs('admin.dashboard') ? 'sidebar__link--active' : '' }}">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                     Dashboard
+                </a>
+                <a href="{{ route('admin.calendar') }}" class="sidebar__link {{ request()->routeIs('admin.calendar') ? 'sidebar__link--active' : '' }}">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    Kalendár
                 </a>
                 <a href="{{ route('admin.reservations') }}" class="sidebar__link {{ request()->routeIs('admin.reservations') ? 'sidebar__link--active' : '' }}">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>

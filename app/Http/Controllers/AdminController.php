@@ -6,7 +6,11 @@ use App\Mail\ReservationCancelled;
 use App\Mail\ReservationConfirmed;
 use App\Models\BlockedSlot;
 use App\Models\Reservation;
+use App\Models\Service;
+use Carbon\Carbon;
+use Illuminate\Contracts\Cache\LockTimeoutException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
@@ -52,6 +56,156 @@ class AdminController extends Controller
             ->get();
 
         return view('admin.dashboard', compact('pendingCount', 'todayReservations'));
+    }
+
+    public function calendar(Request $request)
+    {
+        $month = (int) $request->input('month', now()->month);
+        $year = (int) $request->input('year', now()->year);
+
+        if ($month < 1 || $month > 12 || $year < 2000 || $year > 2100) {
+            $month = now()->month;
+            $year = now()->year;
+        }
+
+        $start = Carbon::create($year, $month, 1)->startOfMonth();
+        $end = $start->copy()->endOfMonth();
+
+        $reservations = Reservation::with('service')
+            ->whereBetween('date', [$start->toDateString(), $end->toDateString()])
+            ->where('status', '!=', 'cancelled')
+            ->orderBy('time')
+            ->get()
+            ->groupBy(fn($r) => $r->date->format('Y-m-d'));
+
+        $blockedDates = BlockedSlot::whereBetween('date', [$start->toDateString(), $end->toDateString()])
+            ->whereNull('time')
+            ->get()
+            ->map(fn($b) => $b->date->format('Y-m-d'))
+            ->toArray();
+
+        $day = $request->input('day');
+        if (!$day) {
+            $today = now()->toDateString();
+            $day = ($today >= $start->toDateString() && $today <= $end->toDateString()) ? $today : null;
+        }
+
+        $dayReservations = collect();
+        $dayClosed = false;
+        $availableSlots = [];
+
+        if ($day) {
+            $dayReservations = Reservation::with('service')
+                ->whereDate('date', $day)
+                ->where('status', '!=', 'cancelled')
+                ->orderBy('time')
+                ->get();
+
+            $dayOfWeek = Carbon::parse($day)->dayOfWeekIso;
+
+            if ($dayOfWeek == 7 || in_array($day, $blockedDates)) {
+                $dayClosed = true;
+            } else {
+                $availableSlots = $this->getFreeSlotsForDate($day, $dayOfWeek);
+            }
+        }
+
+        $services = Service::where('active', true)->orderBy('sort_order')->get();
+
+        return view('admin.calendar', compact(
+            'start', 'reservations', 'blockedDates', 'day',
+            'dayReservations', 'dayClosed', 'availableSlots', 'services', 'month', 'year'
+        ));
+    }
+
+    private function getFreeSlotsForDate(string $date, int $dayOfWeek): array
+    {
+        $blockedTimes = BlockedSlot::where('date', $date)
+            ->whereNotNull('time')
+            ->pluck('time')
+            ->map(fn($t) => substr($t, 0, 5))
+            ->toArray();
+
+        $bookedTimes = Reservation::where('date', $date)
+            ->whereIn('status', ['pending', 'confirmed'])
+            ->pluck('time')
+            ->map(fn($t) => substr($t, 0, 5))
+            ->toArray();
+
+        $unavailable = array_merge($blockedTimes, $bookedTimes);
+
+        $slots = [];
+        $start = 9;
+        $end = ($dayOfWeek == 6) ? 14 : 18;
+
+        for ($hour = $start; $hour < $end; $hour++) {
+            $time = sprintf('%02d:00', $hour);
+            if (!in_array($time, $unavailable)) {
+                $slots[] = $time;
+            }
+        }
+
+        return $slots;
+    }
+
+    public function storeManualReservation(Request $request)
+    {
+        $validated = $request->validate([
+            'service_id' => 'required|exists:services,id',
+            'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'date' => 'required|date',
+            'time' => 'required|string',
+            'note' => 'nullable|string|max:1000',
+        ]);
+
+        $redirectParams = [
+            'month' => (int) date('n', strtotime($validated['date'])),
+            'year' => (int) date('Y', strtotime($validated['date'])),
+            'day' => $validated['date'],
+        ];
+
+        $dayOfWeek = Carbon::parse($validated['date'])->dayOfWeekIso;
+        if ($dayOfWeek == 7) {
+            return redirect()->route('admin.calendar', $redirectParams)
+                ->withErrors(['date' => 'V nedeľu nepracujeme.'])->withInput();
+        }
+
+        try {
+            return Cache::lock('reservation-slot-' . $validated['date'] . '-' . $validated['time'], 10)
+                ->block(5, function () use ($validated, $redirectParams) {
+                    $isBlocked = BlockedSlot::where('date', $validated['date'])
+                        ->where(function ($q) use ($validated) {
+                            $q->whereNull('time')->orWhere('time', $validated['time']);
+                        })->exists();
+
+                    if ($isBlocked) {
+                        return redirect()->route('admin.calendar', $redirectParams)
+                            ->withErrors(['time' => 'Tento termín nie je dostupný.'])->withInput();
+                    }
+
+                    $isTaken = Reservation::where('date', $validated['date'])
+                        ->where('time', $validated['time'])
+                        ->whereIn('status', ['pending', 'confirmed'])
+                        ->exists();
+
+                    if ($isTaken) {
+                        return redirect()->route('admin.calendar', $redirectParams)
+                            ->withErrors(['time' => 'Tento termín je už obsadený.'])->withInput();
+                    }
+
+                    $validated['status'] = 'confirmed';
+                    Reservation::create($validated);
+
+                    return redirect()->route('admin.calendar', $redirectParams)
+                        ->with('success', 'Rezervácia bola manuálne pridaná.');
+                });
+        } catch (LockTimeoutException $e) {
+            return redirect()->route('admin.calendar', $redirectParams)
+                ->withErrors(['time' => 'Tento termín práve spracováva iná rezervácia, skúste to prosím znova.'])->withInput();
+        }
     }
 
     public function reservations(Request $request)
