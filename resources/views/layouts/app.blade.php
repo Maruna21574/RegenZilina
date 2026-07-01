@@ -17,14 +17,14 @@
     <meta property="og:site_name" content="REGEN ŽILINA">
     <meta property="og:title" content="@yield('title', 'REGEN ŽILINA — Masáže, Manuálna terapia & Regenerácia v Žiline')">
     <meta property="og:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a baňkovanie v Žiline. Individuálny prístup, online rezervácia.')">
-    <meta property="og:image" content="@yield('og_image', asset('img/regen_logo_new.png'))">
+    <meta property="og:image" content="@yield('og_image', asset('img/og-share.jpg'))">
     <meta property="og:url" content="{{ url()->current() }}">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'REGEN ŽILINA — Masáže & Regenerácia')">
     <meta name="twitter:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a baňkovanie v Žiline.')">
-    <meta name="twitter:image" content="@yield('og_image', asset('img/regen_logo_new.png'))">
+    <meta name="twitter:image" content="@yield('og_image', asset('img/og-share.jpg'))">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

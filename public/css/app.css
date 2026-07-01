@@ -1278,7 +1278,8 @@ button { font-family: inherit; }
 
 .booking__slot:hover { border-color: var(--green); color: var(--green); }
 
-.booking__slot--active {
+.booking__slot--active,
+.booking__slot--active:hover {
     background: var(--green);
     color: var(--white);
     border-color: var(--green);
@@ -1341,6 +1342,9 @@ button { font-family: inherit; }
 .form-input {
     width: 100%;
     min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
     padding: 14px 16px;
     background: var(--cream);
     border: 1px solid var(--border);
@@ -1349,6 +1353,20 @@ button { font-family: inherit; }
     font-family: var(--font-body);
     font-size: 15px;
     transition: all 0.3s var(--ease);
+}
+
+input[type="date"].form-input,
+input[type="time"].form-input {
+    -webkit-min-logical-width: 0px;
+}
+
+input[type="date"].form-input::-webkit-date-and-time-value {
+    text-align: left;
+}
+
+input[type="date"].form-input::-webkit-calendar-picker-indicator {
+    margin-left: 4px;
+    padding: 0;
 }
 
 .form-input:focus {
