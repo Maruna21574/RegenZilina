@@ -1,15 +1,15 @@
 @extends('layouts.app')
-@section('title', 'Čo vás bolí? — Nájdite správnu masáž | REGEN ŽILINA')
-@section('meta_description', 'Bolí vás chrbát, krk, ramená alebo kolená? Kliknite na problémovú oblasť a my vám odporučíme najvhodnejšiu masáž alebo terapiu v REGEN ŽILINA.')
-@section('meta_keywords', 'bolesti chrbta Žilina, bolesť krku masáž, bolesť ramena terapia, bolesť kolena, masáž na bolesti, ktorá masáž je pre mňa')
+@section('title', 'Čo vás trápi? — Nájdite správnu masáž | REGEN ŽILINA')
+@section('meta_description', 'Vyberte oblasť tela, ktorej chcete venovať pozornosť, a spoznajte vhodné možnosti masáže a regenerácie v REGEN ŽILINA.')
+@section('meta_keywords', 'masáž chrbta Žilina, masáž krku Žilina, masáž ramien, masáž nôh, regenerácia tela, ktorá masáž je pre mňa')
 
 @section('content')
 
 <section class="page-hero page-hero--short" style="background-image: url('{{ asset("img/pexels-joaojesusdesign-28783977.webp") }}')">
     <div class="container">
         <span class="label label--light anim-fade">Interaktívny sprievodca</span>
-        <h1 class="page-hero__title anim-fade" data-delay="1">Ukážte nám,<br><span>čo vás bolí</span></h1>
-        <p class="page-hero__sub anim-fade" data-delay="2">Kliknite na oblasť tela a my vám odporučíme ideálnu procedúru.</p>
+        <h1 class="page-hero__title anim-fade" data-delay="1">Ukážte nám,<br><span>čo vás trápi</span></h1>
+        <p class="page-hero__sub anim-fade" data-delay="2">Kliknite na oblasť tela a my vám odporučíme vhodnú procedúru.</p>
     </div>
 </section>
 
@@ -71,6 +71,8 @@
                         <line x1="165" y1="445" x2="110" y2="445" stroke="#173124" stroke-width="1" stroke-dasharray="3 3"/>
                         <line x1="230" y1="620" x2="290" y2="620" stroke="#173124" stroke-width="1" stroke-dasharray="3 3"/>
                         <line x1="170" y1="620" x2="110" y2="620" stroke="#173124" stroke-width="1" stroke-dasharray="3 3"/>
+                        <line x1="244" y1="755" x2="270" y2="755" stroke="#173124" stroke-width="1" stroke-dasharray="3 3"/>
+                        <line x1="156" y1="755" x2="130" y2="755" stroke="#173124" stroke-width="1" stroke-dasharray="3 3"/>
                     </g>
 
                     {{-- Labely pri čiarach --}}
@@ -88,6 +90,8 @@
                         <text x="102" y="449" class="bodymap__svg-label bodymap__svg-label--left" data-zone="bedro-r">Bedrový kĺb</text>
                         <text x="298" y="624" class="bodymap__svg-label" data-zone="koleno-l">Koleno</text>
                         <text x="102" y="624" class="bodymap__svg-label bodymap__svg-label--left" data-zone="koleno-r">Koleno</text>
+                        <text x="278" y="759" class="bodymap__svg-label" data-zone="clenok-l">Členok a noha</text>
+                        <text x="122" y="759" class="bodymap__svg-label bodymap__svg-label--left" data-zone="clenok-r">Členok a noha</text>
                     </g>
 
                     {{-- Interaktívne body --}}
@@ -183,7 +187,7 @@
                     <h3 id="panelTitle"></h3>
                     <p id="panelDesc"></p>
                     <div class="bodymap__panel-problems">
-                        <h4>Časté problémy</h4>
+                        <h4>Časté potreby</h4>
                         <ul id="panelProblems"></ul>
                     </div>
                     <div class="bodymap__panel-recommend">
@@ -201,113 +205,113 @@ document.addEventListener('DOMContentLoaded', () => {
     const zones = {
         'hlava': {
             title: 'Hlava a spánky',
-            desc: 'Bolesti hlavy, migrény a tenzné bolesti často súvisia s napätím v krčnej chrbtici a trapézových svaloch.',
-            problems: ['Migrény a tenzné bolesti hlavy', 'Závraty z krčnej chrbtice', 'Napätie v spánkoch a čeľusti', 'Bolesti za očami'],
+            desc: 'Oblasť hlavy, spánkov a šije môže byť počas náročných dní výrazne namáhaná.',
+            problems: ['Napätie v oblasti šije', 'Namáhanie pri práci za počítačom', 'Napätie v spánkoch a čeľusti', 'Potreba celkového uvoľnenia'],
             services: [
                 { name: 'REGEN THERAPY', id: 3, why: 'Cielená práca na krčnej chrbtici a suboccipitálnych svaloch' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Podpora svalov krku po terapii' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť krku' }
             ]
         },
         'krk': {
             title: 'Krčná chrbtica',
-            desc: 'Najčastejšie problémová oblasť — sedavý spôsob života, práca za počítačom a nesprávne držanie tela spôsobujú chronické napätie.',
-            problems: ['Stuhnutý krk a obmedzená rotácia', 'Bolesti vyžarujúce do ramien', 'Blokády krčných stavcov', 'Parestézie (tŕpnutie) v rukách'],
+            desc: 'Často namáhaná oblasť pri sedavom spôsobe života a práci za počítačom.',
+            problems: ['Stuhnutý krk', 'Napätie v oblasti ramien', 'Namáhanie pri sedavej práci', 'Potreba uvoľnenia šije'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'Mobilizácia stavcov, MFR, mäkké techniky na hlboké svaly krku' },
-                { name: 'REGEN RELAX', id: 1, why: 'Uvoľnenie celkového napätia s baňkovaním na šiju' }
+                { name: 'REGEN THERAPY', id: 3, why: 'MFR, mäkké techniky a jemné pohybové prvky pre oblasť krku' },
+                { name: 'REGEN RELAX', id: 1, why: 'Uvoľnenie celkového napätia s bankovaním na šiju' }
             ]
         },
         'rameno-l': {
             title: 'Ramenný kĺb',
-            desc: 'Ramenný kĺb je najpohyblivejší kĺb tela — a preto aj najzraniteľnejší. Problémy často vznikajú z preťaženia alebo svalovej dysbalancie.',
-            problems: ['Zamrznuté rameno (frozen shoulder)', 'Bolesti pri zdvíhaní ruky', 'Preťaženie z tréningu alebo práce', 'Syndróm rotátorovej manžety'],
+            desc: 'Ramená bývajú namáhané pri športe, fyzickej práci aj dlhom sedení.',
+            problems: ['Stuhnutosť ramena', 'Napätie pri pohybe ruky', 'Namáhanie z tréningu alebo práce', 'Potreba regenerácie ramien'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'Mobilizácia kĺbu, PIR technika, uvoľnenie rotátorov' },
+                { name: 'REGEN THERAPY', id: 3, why: 'PIR, mäkké techniky a jemné pohybové prvky pre oblasť ramena' },
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia po športovom preťažení ramena' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Stabilizácia a podpora kĺbu medzi návštevami' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť ramena' }
             ]
         },
         'rameno-r': {
             title: 'Ramenný kĺb',
-            desc: 'Ramenný kĺb je najpohyblivejší kĺb tela — a preto aj najzraniteľnejší. Problémy často vznikajú z preťaženia alebo svalovej dysbalancie.',
-            problems: ['Zamrznuté rameno (frozen shoulder)', 'Bolesti pri zdvíhaní ruky', 'Preťaženie z tréningu alebo práce', 'Syndróm rotátorovej manžety'],
+            desc: 'Ramená bývajú namáhané pri športe, fyzickej práci aj dlhom sedení.',
+            problems: ['Stuhnutosť ramena', 'Napätie pri pohybe ruky', 'Namáhanie z tréningu alebo práce', 'Potreba regenerácie ramien'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'Mobilizácia kĺbu, PIR technika, uvoľnenie rotátorov' },
+                { name: 'REGEN THERAPY', id: 3, why: 'PIR, mäkké techniky a jemné pohybové prvky pre oblasť ramena' },
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia po športovom preťažení ramena' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Stabilizácia a podpora kĺbu medzi návštevami' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť ramena' }
             ]
         },
         'hrudna-chrbtica': {
             title: 'Hrudná chrbtica',
-            desc: 'Stuhnutá hrudná chrbtica ovplyvňuje dýchanie, držanie tela a môže spôsobovať bolesti medzi lopatkami.',
-            problems: ['Bolesti medzi lopatkami', 'Stuhnutosť a pocit tlaku na hrudníku', 'Rebrové blokády', 'Zhoršené držanie tela (kyfóza)'],
+            desc: 'Hrudná časť chrbta býva namáhaná pri dlhom sedení a jednostrannej záťaži.',
+            problems: ['Napätie medzi lopatkami', 'Stuhnutosť hornej časti chrbta', 'Namáhanie pri sedavej práci', 'Potreba uvoľnenia chrbta'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'Mobilizácia hrudnej chrbtice a rebier, MFR medzilopatkových svalov' },
-                { name: 'REGEN RELAX', id: 1, why: 'Celkové uvoľnenie chrbta s baňkovaním na hornú časť' }
+                { name: 'REGEN THERAPY', id: 3, why: 'MFR a jemné pohybové prvky pre hrudnú časť chrbta' },
+                { name: 'REGEN RELAX', id: 1, why: 'Celkové uvoľnenie chrbta s bankovaním na hornú časť' }
             ]
         },
         'bedra': {
             title: 'Drieková oblasť (bedra)',
-            desc: 'Najčastejšia oblasť bolesti chrbta. Drieková chrbtica nesie najväčšiu záťaž a je citlivá na sedavý životný štýl aj fyzickú námahu.',
-            problems: ['Akútne „zaseknutie" (lumbago)', 'Chronické bolesti dolného chrbta', 'Vyžarovanie do nôh (ischias)', 'Stuhnuté bedrové svaly (psoas, quadratus)'],
+            desc: 'Drieková oblasť je výrazne namáhaná pri sedavom životnom štýle aj fyzickej aktivite.',
+            problems: ['Stuhnutosť dolnej časti chrbta', 'Napätie po dlhom sedení', 'Namáhanie po fyzickej aktivite', 'Stuhnuté bedrové svaly'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'Hĺbková práca na bedrovej chrbtici, uvoľnenie psoas, mobilizácia' },
+                { name: 'REGEN THERAPY', id: 3, why: 'Hĺbková masáž a jemné pohybové prvky pre driekovú oblasť' },
                 { name: 'REGEN SPORT', id: 2, why: 'Pre športovcov s preťaženým dolným chrbtom' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Podpora driekovej oblasti na 3–5 dní po terapii' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre driekovú oblasť' }
             ]
         },
         'bedro-l': {
             title: 'Bedrový kĺb',
-            desc: 'Bedrový kĺb ovplyvňuje chôdzu, stabilitu a celkový pohyb. Problémy sa často prenášajú do dolného chrbta alebo kolien.',
-            problems: ['Obmedzený rozsah pohybu', 'Bolesti v slabine a stehne', 'Preskakujúce bedro (snapping hip)', 'Preťaženie po behu alebo cyklistike'],
+            desc: 'Bedrová oblasť sa zapája do chôdze, športu aj každodenného pohybu.',
+            problems: ['Stuhnutosť pri pohybe', 'Napätie v okolí bedier a stehien', 'Namáhanie pri dlhom sedení', 'Preťaženie po behu alebo cyklistike'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'Mobilizácia bedrového kĺbu, uvoľnenie flexorov a rotátorov' },
+                { name: 'REGEN THERAPY', id: 3, why: 'Mäkké techniky a jemné pohybové prvky pre oblasť bedra' },
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia a prevencia pre bežcov a cyklistov' }
             ]
         },
         'bedro-r': {
             title: 'Bedrový kĺb',
-            desc: 'Bedrový kĺb ovplyvňuje chôdzu, stabilitu a celkový pohyb. Problémy sa často prenášajú do dolného chrbta alebo kolien.',
-            problems: ['Obmedzený rozsah pohybu', 'Bolesti v slabine a stehne', 'Preskakujúce bedro (snapping hip)', 'Preťaženie po behu alebo cyklistike'],
+            desc: 'Bedrová oblasť sa zapája do chôdze, športu aj každodenného pohybu.',
+            problems: ['Stuhnutosť pri pohybe', 'Napätie v okolí bedier a stehien', 'Namáhanie pri dlhom sedení', 'Preťaženie po behu alebo cyklistike'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'Mobilizácia bedrového kĺbu, uvoľnenie flexorov a rotátorov' },
+                { name: 'REGEN THERAPY', id: 3, why: 'Mäkké techniky a jemné pohybové prvky pre oblasť bedra' },
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia a prevencia pre bežcov a cyklistov' }
             ]
         },
         'koleno-l': {
             title: 'Koleno',
-            desc: 'Kolenný kĺb je zložitý a veľmi zaťažovaný. Problémy často vznikajú z dysbalancie svalov stehna alebo preťaženia.',
-            problems: ['Bolesti pri chôdzi do schodov', 'Nestabilné koleno', 'Runner\'s knee (bežecké koleno)', 'Preťaženie po športe'],
+            desc: 'Oblasť kolena a stehien býva výrazne namáhaná pri športe aj každodennom pohybe.',
+            problems: ['Namáhanie pri chôdzi do schodov', 'Stuhnutosť v okolí kolena', 'Záťaž pri behu', 'Preťaženie po športe'],
             services: [
                 { name: 'REGEN SPORT', id: 2, why: 'Práca na svaloch stehna, uvoľnenie ITB a quadricepsu' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Stabilizácia a odľahčenie kolenného kĺbu' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť kolena' }
             ]
         },
         'koleno-r': {
             title: 'Koleno',
-            desc: 'Kolenný kĺb je zložitý a veľmi zaťažovaný. Problémy často vznikajú z dysbalancie svalov stehna alebo preťaženia.',
-            problems: ['Bolesti pri chôdzi do schodov', 'Nestabilné koleno', 'Runner\'s knee (bežecké koleno)', 'Preťaženie po športe'],
+            desc: 'Oblasť kolena a stehien býva výrazne namáhaná pri športe aj každodennom pohybe.',
+            problems: ['Namáhanie pri chôdzi do schodov', 'Stuhnutosť v okolí kolena', 'Záťaž pri behu', 'Preťaženie po športe'],
             services: [
                 { name: 'REGEN SPORT', id: 2, why: 'Práca na svaloch stehna, uvoľnenie ITB a quadricepsu' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Stabilizácia a odľahčenie kolenného kĺbu' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť kolena' }
             ]
         },
         'clenok-l': {
             title: 'Členok a noha',
-            desc: 'Členky nesú celú váhu tela a sú náchylné na vyvrtnutia a preťaženie, najmä u športovcov.',
-            problems: ['Opakované vyvrtnutia', 'Bolesti Achillovej šľachy', 'Plantárna fasciitída (bolesť päty)', 'Preťaženie z behu alebo stania'],
+            desc: 'Členky a chodidlá sú výrazne namáhané pri športe, chôdzi aj dlhom státí.',
+            problems: ['Namáhanie členkov', 'Napätie v oblasti lýtka', 'Namáhané chodidlá', 'Preťaženie z behu alebo státia'],
             services: [
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia po záťaži, práca na lýtku a plantárnej fascii' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Podpora členku a Achillovej šľachy' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť členka' }
             ]
         },
         'clenok-r': {
             title: 'Členok a noha',
-            desc: 'Členky nesú celú váhu tela a sú náchylné na vyvrtnutia a preťaženie, najmä u športovcov.',
-            problems: ['Opakované vyvrtnutia', 'Bolesti Achillovej šľachy', 'Plantárna fasciitída (bolesť päty)', 'Preťaženie z behu alebo stania'],
+            desc: 'Členky a chodidlá sú výrazne namáhané pri športe, chôdzi aj dlhom státí.',
+            problems: ['Namáhanie členkov', 'Napätie v oblasti lýtka', 'Namáhané chodidlá', 'Preťaženie z behu alebo státia'],
             services: [
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia po záťaži, práca na lýtku a plantárnej fascii' },
-                { name: 'KINEZIOTEJPING', id: 4, why: 'Podpora členku a Achillovej šľachy' }
+                { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť členka' }
             ]
         }
     };

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Služby — Masáže, Terapia & Regenerácia | REGEN ŽILINA')
-@section('meta_description', 'Kompletná ponuka služieb REGEN ŽILINA — relaxačná masáž, športová masáž, manuálna terapia, baňkovanie, kineziotejping a maderoterapia. Prezrite si detaily a rezervujte online.')
-@section('meta_keywords', 'relaxačná masáž Žilina, športová masáž Žilina, manuálna terapia, baňkovanie Žilina, kineziotejping Žilina, maderoterapia, masáž chrbta, masáž krku, trigger point terapia')
+@section('meta_description', 'Kompletná ponuka služieb REGEN ŽILINA — relaxačná masáž, športová masáž, manuálna terapia, bankovanie, kineziotejping a maderoterapia. Prezrite si detaily a rezervujte online.')
+@section('meta_keywords', 'relaxačná masáž Žilina, športová masáž Žilina, manuálna terapia, bankovanie Žilina, kineziotejping Žilina, maderoterapia, masáž chrbta, masáž krku, uvoľnenie svalového napätia')
 
 @section('content')
 
@@ -15,7 +15,19 @@
 <section class="section">
     <div class="container">
         <div class="section__head anim-reveal">
-           
+            <div style="background: linear-gradient(135deg, rgba(45, 90, 61, 0.05) 0%, rgba(45, 90, 61, 0.02) 100%); border-left: 4px solid #2d5a3d; padding: 1.5rem; border-radius: 8px; margin-bottom: 2.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                    <div style="flex-shrink: 0; margin-top: 2px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2d5a3d" stroke-width="2">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.05rem; font-weight: 600; color: #2d5a3d; margin: 0 0 0.5rem 0;">Špecializované poradenstvo</h3>
+                        <p style="font-size: 0.95rem; color: #555; margin: 0; line-height: 1.6;">Individuálne poradenstvo pri výbere masáže a pohybovej regenerácie</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="svc-detail">
@@ -34,13 +46,13 @@
                 </div>
                 <div class="svc-detail__tags">
                     <span class="svc-detail__tag">Relaxácia</span>
-                    <span class="svc-detail__tag">Baňkovanie</span>
+                    <span class="svc-detail__tag">Bankovanie</span>
                     <span class="svc-detail__tag">Uvoľnenie napätia</span>
                 </div>
                 <div class="svc-detail__body">
                     <div class="svc-detail__desc">
-                        <p>Kombinovaná relaxačná masáž celého tela s prvkami baňkovania. Ideálna voľba pre tých, ktorí hľadajú úľavu od každodenného stresu a napätia. Masáž pracuje s dlhými, plynulými ťahmi, ktoré uvoľňujú povrchové svalové napätie a zlepšujú krvný obeh.</p>
-                        <p style="margin-top: 12px;">Baňkovanie sa aplikuje na problémové oblasti — najčastejšie chrbát a ramená — pre hlbšie uvoľnenie fascií a svalového tkaniva. Výsledkom je pocit hlbokého uvoľnenia a regenerácie.</p>
+                        <p>Kombinovaná relaxačná masáž celého tela s prvkami bankovania. Ideálna voľba pre oddych od každodenného stresu a napätia. Masáž pracuje s dlhými, plynulými ťahmi zameranými na uvoľnenie a celkovú regeneráciu.</p>
+                        <p style="margin-top: 12px;">Bankovanie sa aplikuje na vybrané oblasti — najčastejšie chrbát a ramená — ako súčasť masáže zameranej na uvoľnenie a regeneráciu.</p>
                     </div>
                     <div class="svc-detail__features">
                         <div class="svc-detail__feature">
@@ -49,7 +61,7 @@
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Baňkovanie na problémové partie</span>
+                            <span>Bankovanie na vybrané partie</span>
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -93,7 +105,7 @@
                 <div class="svc-detail__body">
                     <div class="svc-detail__desc">
                         <p>Intenzívna regeneračná masáž navrhnutá špeciálne pre športovcov a ľudí s fyzicky náročným zamestnaním. Pracujeme s hlbším tlakom a cielenou prácou na preťažených svalových skupinách — najčastejšie dolný chrbát, nohy, ramená a krk.</p>
-                        <p style="margin-top: 12px;">Využívame techniky športovej masáže, strečing, triggerpoint terapiu a prácu s fasciami. Cieľom je urýchliť regeneráciu po tréningu, zlepšiť rozsah pohybu a predísť zraneniam. Ideálne pred alebo po súťažiach a náročných tréningových blokoch.</p>
+                        <p style="margin-top: 12px;">Využívame techniky športovej masáže, strečing, cielenú prácu s napätými miestami vo svaloch a prácu s fasciami. Cieľom je podporiť regeneráciu po tréningu a pohyblivosť tela. Ideálne pred alebo po súťažiach a náročných tréningových blokoch.</p>
                     </div>
                     <div class="svc-detail__features">
                         <div class="svc-detail__feature">
@@ -102,7 +114,7 @@
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Triggerpoint terapia a strečing</span>
+                            <span>Cielená práca so svalovým napätím a strečing</span>
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -114,7 +126,7 @@
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Prevencia zranení a svalových dysbalancií</span>
+                            <span>Starostlivosť o namáhané svalové partie</span>
                         </div>
                     </div>
                 </div>
@@ -140,19 +152,19 @@
                 </div>
                 <div class="svc-detail__tags">
                     <span class="svc-detail__tag">Terapia</span>
-                    <span class="svc-detail__tag">Bolesti chrbta</span>
+                    <span class="svc-detail__tag">Regenerácia chrbta</span>
                     <span class="svc-detail__tag">MFR</span>
-                    <span class="svc-detail__tag">Mobilizácia</span>
+                    <span class="svc-detail__tag">Pohybové prvky</span>
                 </div>
                 <div class="svc-detail__body">
                     <div class="svc-detail__desc">
-                        <p>Terapeutická hodina zameraná na riešenie konkrétneho problému. Na začiatku vykonáme krátke vyšetrenie a diagnostiku — zistíme, kde je skutočná príčina vašich ťažkostí, nie len symptóm. Následne pracujeme cielene na danej oblasti.</p>
-                        <p style="margin-top: 12px;">Využívame myofasciálne uvoľnenie (MFR), mobilizáciu kĺbov, postizometrickú relaxáciu (PIR), mäkké techniky a hĺbkovú tkanivovú prácu. Ideálne pri chronických bolestiach chrbta, krku, hlavy, pri blokádach a obmedzenom rozsahu pohybu. Odporúčame sériu 3–5 návštev pre trvalý efekt.</p>
+                        <p>Individuálna hodina zameraná na pohybovú regeneráciu podľa aktuálnych potrieb klienta. Na začiatku sa porozprávame o vašich potrebách a následne sa cielene venujeme vybraným oblastiam tela.</p>
+                        <p style="margin-top: 12px;">Využívame myofasciálne uvoľnenie (MFR), jemné pohybové prvky, postizometrickú relaxáciu (PIR), mäkké techniky a hĺbkovú tkanivovú prácu. Rozsah a kombináciu techník prispôsobujeme individuálne.</p>
                     </div>
                     <div class="svc-detail__features">
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Vstupná diagnostika a vyšetrenie</span>
+                            <span>Úvodná konzultácia potrieb</span>
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -160,7 +172,7 @@
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Mobilizácia kĺbov a chrbtice</span>
+                            <span>Jemné pohybové prvky pre kĺby a chrbticu</span>
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -210,8 +222,9 @@
                 </div>
                 <div class="svc-detail__body">
                     <div class="svc-detail__desc">
-                        <p>Aplikácia elastického kineziotejpu na problémové oblasti. Tejp podporuje správnu funkciu svalov, znižuje opuch, stabilizuje kĺby a predlžuje efekt masáže alebo terapie. Najčastejšie aplikujeme na krčnú chrbticu, ramená, kolená a bedrovú oblasť.</p>
-                        <p style="margin-top: 12px;">Ideálna doplnková služba po REGEN THERAPY alebo REGEN SPORT. Tejp drží na tele 3–5 dní a pracuje nepretržite — podporuje hojenie aj počas bežných denných aktivít.</p>
+                        <p>Aplikácia elastického kineziotejpu na vybrané oblasti tela ako podporného doplnku k masáži. Najčastejšie ho aplikujeme na krčnú oblasť, ramená, kolená a bedrovú oblasť.</p>
+                        <p style="margin-top: 12px;">Doplnková služba po REGEN THERAPY alebo REGEN SPORT. Tejp môže na tele zostať 3–5 dní podľa individuálnej znášanlivosti.</p>
+                        <p style="margin-top: 12px;"><strong>Kineziotejp poskytujeme iba ako podporný doplnok bez deklarovania stabilizačných alebo iných zdravotných účinkov.</strong></p>
                     </div>
                     <div class="svc-detail__features">
                         <div class="svc-detail__feature">

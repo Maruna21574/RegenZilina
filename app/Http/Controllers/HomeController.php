@@ -45,4 +45,19 @@ class HomeController extends Controller
     {
         return view('pages.body-map');
     }
+
+    public function privacy()
+    {
+        return view('pages.privacy');
+    }
+
+    public function terms()
+    {
+        return view('pages.terms');
+    }
+
+    public function cookies()
+    {
+        return view('pages.cookies');
+    }
 }

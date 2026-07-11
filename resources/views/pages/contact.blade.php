@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <strong>Adresa</strong>
-                        <p>J. M. Hurbana 4, Žilina 01001</p>
+                        <p><a href="https://maps.google.com/?q=J.+M.+Hurbana+4,+Žilina+01001,+Slovensko" target="_blank" style="color: inherit; text-decoration: none; hover: underline;">J. M. Hurbana 4, Žilina 01001</a></p>
                     </div>
                 </div>
                 <div class="contact-info__item">
@@ -40,7 +40,7 @@
                     </div>
                     <div>
                         <strong>Email</strong>
-                        <p>info@regenzilina.sk</p>
+                        <p><a href="mailto:info@regenzilina.sk" style="color: inherit; text-decoration: none;">info@regenzilina.sk</a></p>
                     </div>
                 </div>
                 <div class="contact-info__item">

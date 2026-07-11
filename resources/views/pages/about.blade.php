@@ -17,8 +17,8 @@
         <div class="about-grid">
             <div class="about-grid__text anim-reveal">
                 <h2 class="h2">Kto sme</h2>
-                <p>V <strong>REGEN ŽILINA</strong> sa špecializujeme na úľavu od bolesti chrbta a krku, komplexnú regeneráciu, masáže, manuálnu terapiu a baňkovanie.</p>
-                <p>Každá procedúra je prispôsobená individuálne podľa vašich potrieb a aktuálneho stavu. Naším cieľom nie je len dočasná úľava, ale dlhodobé riešenie vašich problémov.</p>
+                <p>V <strong>REGEN ŽILINA</strong> sa venujeme komplexnej regenerácii, masážam, manuálnym technikám a bankovaniu.</p>
+                <p>Každá procedúra je prispôsobená individuálne podľa vašich potrieb a aktuálneho stavu.</p>
                 <p>Pracujeme v modernom a príjemnom prostredí, kde sa môžete plne uvoľniť a sústrediť sa na svoju regeneráciu.</p>
             </div>
             <div class="about-grid__visual anim-reveal" data-delay="1">
@@ -51,7 +51,7 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15l-2 5l9-11h-5l2-5L7 15h5z"/></svg>
                 </div>
                 <h3>Skúsenosti</h3>
-                <p>Dlhoročná prax v oblasti masáží, manuálnej terapie a rehabilitácie.</p>
+                <p>Dlhoročná prax v oblasti masáží, manuálnych techník a pohybovej regenerácie.</p>
             </div>
             <div class="value-card anim-reveal" data-delay="1">
                 <div class="value-card__icon">
@@ -80,8 +80,8 @@
         <div class="target-grid">
             <div class="target-card anim-reveal">
                 <div class="target-card__line"></div>
-                <h3>Trápia vás bolesti chrbta alebo krku</h3>
-                <p>Cielená terapeutická masáž uvoľní napätie a zmierni bolesť v problémových oblastiach.</p>
+                <h3>Cítite napätie v oblasti chrbta alebo krku</h3>
+                <p>Masáž je zameraná na uvoľnenie namáhaných oblastí a celkovú regeneráciu.</p>
             </div>
             <div class="target-card anim-reveal" data-delay="1">
                 <div class="target-card__line"></div>
@@ -91,7 +91,7 @@
             <div class="target-card anim-reveal" data-delay="2">
                 <div class="target-card__line"></div>
                 <h3>Chcete sa jednoducho zrelaxovať</h3>
-                <p>Relaxačná masáž kombinovaná s baňkovaním pre dokonalé uvoľnenie tela aj mysle.</p>
+                <p>Relaxačná masáž kombinovaná s bankovaním pre dokonalé uvoľnenie tela aj mysle.</p>
             </div>
         </div>
     </div>

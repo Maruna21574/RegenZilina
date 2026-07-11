@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'REGEN ŽILINA — Masáže, Manuálna terapia & Regenerácia v Žiline')
-@section('meta_description', 'Profesionálne masáže v Žiline — športová masáž, relaxačná masáž, manuálna terapia, baňkovanie a kineziotejping. Individuálny prístup, online rezervácia termínu.')
-@section('meta_keywords', 'masáže Žilina, masér Žilina, športová masáž Žilina, relaxačná masáž Žilina, manuálna terapia Žilina, baňkovanie Žilina, kineziotejping, bolesti chrbta Žilina, regenerácia Žilina, masážny salón Žilina')
+@section('meta_description', 'Profesionálne masáže v Žiline — športová masáž, relaxačná masáž, manuálna terapia, bankovanie a kineziotejping. Individuálny prístup, online rezervácia termínu.')
+@section('meta_keywords', 'masáže Žilina, masér Žilina, športová masáž Žilina, relaxačná masáž Žilina, manuálna terapia Žilina, bankovanie Žilina, kineziotejping, masáž chrbta Žilina, regenerácia Žilina, masážny salón Žilina')
 
 @section('content')
 
@@ -19,7 +19,7 @@
             <h1 class="hero-video__title anim-fade" data-delay="1">
                 Doprajte svojmu telu<br><span>čo si zaslúži</span>
             </h1>
-            <p class="hero-video__text anim-fade" data-delay="2">Profesionálne masáže, manuálna terapia a regenerácia v srdci Žiliny. Individuálny prístup ku každému klientovi.</p>
+            <p class="hero-video__text anim-fade" data-delay="2">Odborné masáže a pohybová regenerácia, založené na zdravotníckom vzdelaní. Pomáhame cítiť sa lepšie prostredíctvom odborných masáží a regenerácie.</p>
             <div class="hero-video__actions anim-fade" data-delay="3">
                 <a href="{{ route('booking') }}" class="btn btn--white">
                     <span>Rezervovať termín</span>
@@ -37,13 +37,27 @@
             <div class="intro__left anim-reveal">
                 <span class="label">Prečo REGEN</span>
                 <h2 class="h2">Nie sme klasické masážne<br>štúdio</h2>
+
+                <div style="margin-top: 2rem; padding: 1.25rem; background: #f8faf8; border-radius: 8px; border: 1px solid #e0e8e0;">
+                    <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#2d5a3d" stroke="none">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span style="font-size: 0.9rem; font-weight: 600; color: #2d5a3d;">Špecializované poradenstvo</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #555; margin: 0; line-height: 1.5;">Individuálne poradenstvo pri výbere masáže a pohybovej regenerácie</p>
+                </div>
             </div>
+
             <div class="intro__right anim-reveal" data-delay="1">
-                <p>Spájame hlboké znalosti manuálnej terapie s modernými technikami regenerácie. Každý klient je pre nás jedinečný — nepracujeme podľa šablóny, ale podľa toho, čo vaše telo naozaj potrebuje.</p>
-                <a href="{{ route('about') }}" class="link-arrow">
+                <p>Každému klientovi venujeme individuálny prístup založený na zdravotníckom vzdelaní, odborných masážach a pohybovej regenerácii. Každé telo je iné, preto nepracujeme podľa šablóny, ale podľa aktuálneho stavu a potrieb klienta.</p>
+
+                <a href="{{ route('about') }}" class="btn btn--primary" style="margin-top: 1.5rem;">
                     Zistiť viac o nás
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
+
+
             </div>
         </div>
     </div>
@@ -80,16 +94,16 @@
 {{-- TEXT MARQUEE --}}
 <div class="text-marquee">
     <div class="text-marquee__track">
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Skoncujte s bolesťou</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Doprajte si regeneráciu</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Výmenný lístok nie je potrebný</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vyšší level zdravotnej starostlivosti</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Regenerácia na vyššej úrovni</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Úprimná snaha pomôcť</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bez čakania, na objednávku</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Individuálny prístup</span>
         {{-- duplikácia --}}
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Skoncujte s bolesťou</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Doprajte si regeneráciu</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Výmenný lístok nie je potrebný</span>
-        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vyšší level zdravotnej starostlivosti</span>
+        <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Regenerácia na vyššej úrovni</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Úprimná snaha pomôcť</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bez čakania, na objednávku</span>
         <span class="text-marquee__item"><svg class="text-marquee__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Individuálny prístup</span>
@@ -159,7 +173,7 @@
                 <div class="mviz__phase mviz__phase--active" data-phase="1">
                     <span class="mviz__phase-label">Fáza 1</span>
                     <h3>Identifikácia napätia</h3>
-                    <p>Ruky terapeuta lokalizujú svalové uzly, trigger pointy a oblasti so zvýšeným napätím. Červené body znázorňujú problémové miesta.</p>
+                    <p>Ruky maséra vyhľadávajú miesta so zvýšeným svalovým napätím. Červené body znázorňujú miesta, na ktoré sa masáž zameriava.</p>
                 </div>
                 <div class="mviz__phase" data-phase="2">
                     <span class="mviz__phase-label">Fáza 2</span>
@@ -196,12 +210,12 @@
         <div class="testi__marquee-track">
             <div class="testi__marquee-item">
                 <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Po rokoch bolestí chrbta som konečne našiel niekoho, kto mi naozaj pomohol. Profesionálny prístup na úplne inej úrovni."</p>
+                <p class="testi__marquee-text">„Po návšteve som sa cítil uvoľnenejšie. Profesionálny prístup na úplne inej úrovni."</p>
                 <span class="testi__marquee-name">— Martin K.</span>
             </div>
             <div class="testi__marquee-item">
                 <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Najlepšia športová masáž, akú som kedy mala. Presne vedel, kde je problém. Odporúčam každému bežcovi."</p>
+                <p class="testi__marquee-text">„Najlepšia športová masáž, akú som kedy mala. Prístup presne zodpovedal mojim potrebám. Odporúčam každému bežcovi."</p>
                 <span class="testi__marquee-name">— Zuzana P.</span>
             </div>
             <div class="testi__marquee-item">
@@ -211,7 +225,7 @@
             </div>
             <div class="testi__marquee-item">
                 <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Riešil som chronické bolesti krku. Po terapii a kineziotejpingu okamžitá úľava. Konečne viem, kam chodiť."</p>
+                <p class="testi__marquee-text">„Ocenil som individuálny prístup, príjemné prostredie a dôkladnú prácu. Konečne viem, kam chodiť."</p>
                 <span class="testi__marquee-name">— Peter S.</span>
             </div>
             <div class="testi__marquee-item">
@@ -232,12 +246,12 @@
             {{-- duplikácia pre plynulý loop --}}
             <div class="testi__marquee-item">
                 <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Po rokoch bolestí chrbta som konečne našiel niekoho, kto mi naozaj pomohol. Profesionálny prístup na úplne inej úrovni."</p>
+                <p class="testi__marquee-text">„Po návšteve som sa cítil uvoľnenejšie. Profesionálny prístup na úplne inej úrovni."</p>
                 <span class="testi__marquee-name">— Martin K.</span>
             </div>
             <div class="testi__marquee-item">
                 <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Najlepšia športová masáž, akú som kedy mala. Presne vedel, kde je problém. Odporúčam každému bežcovi."</p>
+                <p class="testi__marquee-text">„Najlepšia športová masáž, akú som kedy mala. Prístup presne zodpovedal mojim potrebám. Odporúčam každému bežcovi."</p>
                 <span class="testi__marquee-name">— Zuzana P.</span>
             </div>
             <div class="testi__marquee-item">
@@ -247,7 +261,7 @@
             </div>
             <div class="testi__marquee-item">
                 <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Riešil som chronické bolesti krku. Po terapii a kineziotejpingu okamžitá úľava. Konečne viem, kam chodiť."</p>
+                <p class="testi__marquee-text">„Ocenil som individuálny prístup, príjemné prostredie a dôkladnú prácu. Konečne viem, kam chodiť."</p>
                 <span class="testi__marquee-name">— Peter S.</span>
             </div>
             <div class="testi__marquee-item">

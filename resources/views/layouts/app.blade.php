@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="@yield('meta_description', 'REGEN ŽILINA — profesionálne masáže, manuálna terapia, regenerácia a baňkovanie v Žiline. Individuálny prístup, online rezervácia.')">
-    <meta name="keywords" content="@yield('meta_keywords', 'masáže Žilina, manuálna terapia Žilina, regenerácia Žilina, športová masáž, relaxačná masáž, baňkovanie, kineziotejping, bolesti chrbta, masérske štúdio Žilina')">
+    <meta name="description" content="@yield('meta_description', 'REGEN ŽILINA — profesionálne masáže, manuálna terapia, regenerácia a bankovanie v Žiline. Individuálny prístup, online rezervácia.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'masáže Žilina, manuálna terapia Žilina, regenerácia Žilina, športová masáž, relaxačná masáž, bankovanie, kineziotejping, masáž chrbta, masérske štúdio Žilina')">
     <meta name="author" content="REGEN ŽILINA">
     <meta name="robots" content="index, follow">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -16,14 +16,14 @@
     <meta property="og:locale" content="sk_SK">
     <meta property="og:site_name" content="REGEN ŽILINA">
     <meta property="og:title" content="@yield('title', 'REGEN ŽILINA — Masáže, Manuálna terapia & Regenerácia v Žiline')">
-    <meta property="og:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a baňkovanie v Žiline. Individuálny prístup, online rezervácia.')">
+    <meta property="og:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a bankovanie v Žiline. Individuálny prístup, online rezervácia.')">
     <meta property="og:image" content="@yield('og_image', asset('img/og-share.jpg'))">
     <meta property="og:url" content="{{ url()->current() }}">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'REGEN ŽILINA — Masáže & Regenerácia')">
-    <meta name="twitter:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a baňkovanie v Žiline.')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a bankovanie v Žiline.')">
     <meta name="twitter:image" content="@yield('og_image', asset('img/og-share.jpg'))">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,8 +38,9 @@
     {
         "@@context": "https://schema.org",
         "@@type": "HealthAndBeautyBusiness",
+        "@@id": "{{ url('/') }}#business",
         "name": "REGEN ŽILINA",
-        "description": "Profesionálne masáže, manuálna terapia, regenerácia a baňkovanie v Žiline. Individuálny prístup ku každému klientovi.",
+        "description": "Odborné masáže, pohybová regenerácia a bankovanie v Žiline s individuálnym prístupom ku každému klientovi.",
         "url": "{{ url('/') }}",
         "logo": "{{ asset('img/regen_logo_new.png') }}",
         "image": "{{ asset('img/foto_1.webp') }}",
@@ -64,12 +65,11 @@
             "closes": "18:00"
         },
         "priceRange": "€€",
-        "aggregateRating": {
-            "@@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "7"
-        },
-        "sameAs": []
+        "hasMap": "https://maps.google.com/?q=J.+M.+Hurbana+4,+Žilina+01001,+Slovensko",
+        "sameAs": [
+            "https://www.instagram.com/regenzilina",
+            "https://www.facebook.com/profile.php?id=61587353300234"
+        ]
     }
     </script>
     @stack('structured_data')
@@ -91,7 +91,7 @@
                 <a href="{{ route('home') }}" class="nav__link {{ request()->routeIs('home') ? 'nav__link--active' : '' }}">Domov</a>
                 <a href="{{ route('about') }}" class="nav__link {{ request()->routeIs('about') ? 'nav__link--active' : '' }}">O nás</a>
                 <a href="{{ route('services') }}" class="nav__link {{ request()->routeIs('services') ? 'nav__link--active' : '' }}">Služby</a>
-                <a href="{{ route('body-map') }}" class="nav__link {{ request()->routeIs('body-map') ? 'nav__link--active' : '' }}">Čo vás bolí?</a>
+                <a href="{{ route('body-map') }}" class="nav__link {{ request()->routeIs('body-map') ? 'nav__link--active' : '' }}">Čo vás trápi?</a>
                 <a href="{{ route('pricing') }}" class="nav__link {{ request()->routeIs('pricing') ? 'nav__link--active' : '' }}">Cenník</a>
                 <a href="{{ route('contact') }}" class="nav__link {{ request()->routeIs('contact') ? 'nav__link--active' : '' }}">Kontakt</a>
                 <a href="{{ route('booking') }}" class="nav__cta">Rezervácia</a>
@@ -108,7 +108,7 @@
             <div class="container">
                 <div class="footer__cta-inner">
                     <div class="footer__cta-text">
-                        <h2>Začnite svoju cestu k úľave</h2>
+                        <h2>Začnite svoju cestu k regenerácii</h2>
                         <p>Prvý krok je ten najťažší. My vám ho uľahčíme.</p>
                     </div>
                     <a href="{{ route('booking') }}" class="btn btn--white btn--lg">
@@ -169,8 +169,9 @@
                 <div class="footer__bottom-inner">
                     <p>&copy; {{ date('Y') }} REGEN ŽILINA. Všetky práva vyhradené.</p>
                     <div class="footer__bottom-links">
-                        <a href="#">Ochrana súkromia</a>
-                        <a href="#">Obchodné podmienky</a>
+                        <a href="{{ route('privacy') }}">Ochrana súkromia</a>
+                        <a href="{{ route('terms') }}">Obchodné podmienky</a>
+                        <a href="{{ route('cookies') }}">Cookies</a>
                     </div>
                 </div>
             </div>

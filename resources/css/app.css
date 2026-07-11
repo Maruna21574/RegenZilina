@@ -7,3 +7,62 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@layer components {
+    .legal-content {
+        @apply max-w-3xl mx-auto;
+    }
+
+    .legal-content__intro {
+        @apply mb-12 pb-8 border-b border-gray-200;
+    }
+
+    .legal-content__intro p {
+        @apply text-gray-600 leading-relaxed mb-4;
+    }
+
+    .legal-content__intro strong {
+        @apply text-gray-900 font-semibold;
+    }
+
+    .legal-content h2 {
+        @apply text-2xl font-bold text-gray-900 mt-12 mb-6 pt-4;
+    }
+
+    .legal-content h3 {
+        @apply text-xl font-semibold text-gray-800 mt-8 mb-4 pt-2;
+    }
+
+    .legal-content p {
+        @apply text-gray-700 leading-relaxed mb-4;
+    }
+
+    .legal-content ul,
+    .legal-content ol {
+        @apply ml-6 mb-6 space-y-2;
+    }
+
+    .legal-content li {
+        @apply text-gray-700 leading-relaxed;
+    }
+
+    .legal-content table {
+        @apply border-collapse border border-gray-300 w-full mb-6;
+    }
+
+    .legal-content th {
+        @apply bg-gray-100 text-gray-900 font-semibold p-3 text-left border border-gray-300;
+    }
+
+    .legal-content td {
+        @apply p-3 border border-gray-300 text-gray-700;
+    }
+
+    .legal-content strong {
+        @apply font-semibold text-gray-900;
+    }
+
+    .legal-content a {
+        @apply text-blue-600 hover:text-blue-800 underline;
+    }
+}
