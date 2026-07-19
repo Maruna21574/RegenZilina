@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Cenník masáží a terapií | REGEN ŽILINA')
-@section('meta_description', 'Cenník masáží a terapií v REGEN ŽILINA. Relaxačná masáž od 30€, športová masáž, manuálna terapia, bankovanie a ďalšie procedúry. Transparentné ceny bez skrytých poplatkov.')
+@section('meta_description', 'Cenník masáží a regenerácie v REGEN ŽILINA. Relaxačná masáž, športová masáž, pohybová regenerácia, bankovanie a ďalšie služby bez skrytých poplatkov.')
 @section('meta_keywords', 'cenník masáží Žilina, cena masáže Žilina, koľko stojí masáž, lacná masáž Žilina, cenník terapie, cena bankovania, cena kineziotejpingu')
 
 @section('content')

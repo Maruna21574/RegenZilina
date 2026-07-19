@@ -27,7 +27,7 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/'),
             'priority' => '1.0',
             'changefreq' => 'weekly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => [
                 ['url' => asset('img/foto_1.webp'), 'title' => 'Profesionálna masáž v REGEN ŽILINA'],
                 ['url' => asset('img/regen_logo_new.png'), 'title' => 'REGEN ŽILINA logo'],
@@ -37,7 +37,7 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/sluzby'),
             'priority' => '0.9',
             'changefreq' => 'weekly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => [
                 ['url' => asset('img/pexels-koolshooters-6628615.webp'), 'title' => 'Naše masážne služby'],
             ]
@@ -46,7 +46,7 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/cennik'),
             'priority' => '0.8',
             'changefreq' => 'monthly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => [
                 ['url' => asset('img/pexels-koolshooters-6628690.webp'), 'title' => 'Cenník masáží a terapií'],
             ]
@@ -55,7 +55,7 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/o-nas'),
             'priority' => '0.7',
             'changefreq' => 'monthly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => [
                 ['url' => asset('img/foto_1.webp'), 'title' => 'Profesionálna masáž - REGEN ŽILINA'],
                 ['url' => asset('img/foto_2.webp'), 'title' => 'Interiér masážneho štúdia REGEN ŽILINA'],
@@ -65,7 +65,7 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/co-vas-trapi'),
             'priority' => '0.7',
             'changefreq' => 'monthly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => [
                 ['url' => asset('img/pexels-joaojesusdesign-28783977.webp'), 'title' => 'Interaktívny sprievodca - Čo vás trápi'],
             ]
@@ -74,7 +74,7 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/rezervacia'),
             'priority' => '0.9',
             'changefreq' => 'daily',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => [
                 ['url' => asset('img/pexels-joaojesusdesign-28783977.webp'), 'title' => 'Online rezervácia masáže'],
             ]
@@ -83,7 +83,7 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/kontakt'),
             'priority' => '0.6',
             'changefreq' => 'monthly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => [
                 ['url' => asset('img/pexels-koolshooters-6628615.webp'), 'title' => 'Kontakt na REGEN ŽILINA'],
             ]
@@ -92,21 +92,21 @@ Route::get('/sitemap.xml', function () {
             'loc' => url('/ochrana-sukromia'),
             'priority' => '0.5',
             'changefreq' => 'yearly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => []
         ],
         [
             'loc' => url('/obchodne-podmienky'),
             'priority' => '0.5',
             'changefreq' => 'yearly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => []
         ],
         [
             'loc' => url('/cookies'),
             'priority' => '0.5',
             'changefreq' => 'yearly',
-            'lastmod' => '2026-07-11',
+            'lastmod' => '2026-07-19',
             'images' => []
         ],
     ];

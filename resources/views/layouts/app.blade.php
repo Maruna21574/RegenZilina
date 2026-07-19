@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="@yield('meta_description', 'REGEN ŽILINA — profesionálne masáže, manuálna terapia, regenerácia a bankovanie v Žiline. Individuálny prístup, online rezervácia.')">
-    <meta name="keywords" content="@yield('meta_keywords', 'masáže Žilina, manuálna terapia Žilina, regenerácia Žilina, športová masáž, relaxačná masáž, bankovanie, kineziotejping, masáž chrbta, masérske štúdio Žilina')">
+    <meta name="description" content="@yield('meta_description', 'REGEN ŽILINA — profesionálne masáže, pohybová regenerácia a bankovanie v Žiline. Individuálny prístup a online rezervácia.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'masáže Žilina, pohybová regenerácia Žilina, športová masáž, relaxačná masáž, bankovanie, kineziotejping, masáž chrbta, masérske štúdio Žilina')">
     <meta name="author" content="REGEN ŽILINA">
     <meta name="robots" content="index, follow">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'REGEN ŽILINA — Masáže, Manuálna terapia & Regenerácia v Žiline')</title>
+    <title>@yield('title', 'REGEN ŽILINA — Masáže & Pohybová regenerácia v Žiline')</title>
     <link rel="canonical" href="{{ url()->current() }}">
 
     {{-- Open Graph --}}
     <meta property="og:type" content="website">
     <meta property="og:locale" content="sk_SK">
     <meta property="og:site_name" content="REGEN ŽILINA">
-    <meta property="og:title" content="@yield('title', 'REGEN ŽILINA — Masáže, Manuálna terapia & Regenerácia v Žiline')">
-    <meta property="og:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a bankovanie v Žiline. Individuálny prístup, online rezervácia.')">
+    <meta property="og:title" content="@yield('title', 'REGEN ŽILINA — Masáže & Pohybová regenerácia v Žiline')">
+    <meta property="og:description" content="@yield('meta_description', 'Profesionálne masáže, pohybová regenerácia a bankovanie v Žiline. Individuálny prístup a online rezervácia.')">
     <meta property="og:image" content="@yield('og_image', asset('img/og-share.jpg'))">
     <meta property="og:url" content="{{ url()->current() }}">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'REGEN ŽILINA — Masáže & Regenerácia')">
-    <meta name="twitter:description" content="@yield('meta_description', 'Profesionálne masáže, manuálna terapia, regenerácia a bankovanie v Žiline.')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Profesionálne masáže, pohybová regenerácia a bankovanie v Žiline.')">
     <meta name="twitter:image" content="@yield('og_image', asset('img/og-share.jpg'))">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +65,43 @@
             "closes": "18:00"
         },
         "priceRange": "€€",
+        "areaServed": {
+            "@@type": "City",
+            "name": "Žilina"
+        },
+        "hasOfferCatalog": {
+            "@@type": "OfferCatalog",
+            "name": "Masáže a pohybová regenerácia v Žiline",
+            "itemListElement": [
+                {
+                    "@@type": "Offer",
+                    "itemOffered": {
+                        "@@type": "Service",
+                        "name": "REGEN RELAX",
+                        "description": "Relaxačná masáž chrbta, ramien a krčnej oblasti s prvkami bankovania",
+                        "areaServed": "Žilina"
+                    }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": {
+                        "@@type": "Service",
+                        "name": "REGEN SPORT",
+                        "description": "Športová masáž a regenerácia namáhaných svalových partií",
+                        "areaServed": "Žilina"
+                    }
+                },
+                {
+                    "@@type": "Offer",
+                    "itemOffered": {
+                        "@@type": "Service",
+                        "name": "REGEN THERAPY",
+                        "description": "Individuálna pohybová regenerácia a práca s mäkkými tkanivami",
+                        "areaServed": "Žilina"
+                    }
+                }
+            ]
+        },
         "hasMap": "https://maps.google.com/?q=J.+M.+Hurbana+4,+Žilina+01001,+Slovensko",
         "sameAs": [
             "https://www.instagram.com/regenzilina",
@@ -125,7 +162,7 @@
                         <a href="{{ route('home') }}" class="footer__logo">
                             <img src="{{ asset('img/regen_white.webp') }}" alt="REGEN Žilina — masážne štúdio" class="footer__logo-img" loading="lazy">
                         </a>
-                        <p>Profesionálne masáže, manuálna terapia a regenerácia v srdci Žiliny.</p>
+                        <p>Profesionálne masáže a pohybová regenerácia v srdci Žiliny.</p>
                     </div>
                     <div class="footer__col">
                         <h4>Navigácia</h4>
@@ -172,6 +209,7 @@
                         <a href="{{ route('privacy') }}">Ochrana súkromia</a>
                         <a href="{{ route('terms') }}">Obchodné podmienky</a>
                         <a href="{{ route('cookies') }}">Cookies</a>
+                        <button type="button" class="footer__cookie-settings" data-cookie-settings>Nastavenia cookies</button>
                     </div>
                 </div>
             </div>
@@ -215,6 +253,20 @@
     <button class="scroll-top" id="scrollTop" aria-label="Späť hore">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
+
+    <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieBannerTitle" aria-describedby="cookieBannerText" hidden>
+        <div class="cookie-banner__inner">
+            <div class="cookie-banner__content">
+                <span class="cookie-banner__eyebrow">Vaše súkromie</span>
+                <h2 id="cookieBannerTitle">Nastavenie cookies</h2>
+                <p id="cookieBannerText">Nevyhnutné cookies používame na bezpečné fungovanie stránky. Google Maps načítame iba s vaším súhlasom. Viac v <a href="{{ route('cookies') }}">politike cookies</a>.</p>
+            </div>
+            <div class="cookie-banner__actions">
+                <button type="button" class="cookie-banner__button cookie-banner__button--secondary" data-cookie-choice="necessary">Len nevyhnutné</button>
+                <button type="button" class="cookie-banner__button cookie-banner__button--primary" data-cookie-choice="all">Povoliť všetko</button>
+            </div>
+        </div>
+    </section>
 
     <script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
 </body>

@@ -1,23 +1,24 @@
 @extends('layouts.app')
 
-@section('title', 'REGEN ŽILINA — Masáže, Manuálna terapia & Regenerácia v Žiline')
-@section('meta_description', 'Profesionálne masáže v Žiline — športová masáž, relaxačná masáž, manuálna terapia, bankovanie a kineziotejping. Individuálny prístup, online rezervácia termínu.')
-@section('meta_keywords', 'masáže Žilina, masér Žilina, športová masáž Žilina, relaxačná masáž Žilina, manuálna terapia Žilina, bankovanie Žilina, kineziotejping, masáž chrbta Žilina, regenerácia Žilina, masážny salón Žilina')
+@section('title', 'REGEN ŽILINA — Masáže & Pohybová regenerácia v Žiline')
+@section('meta_description', 'Profesionálne masáže a pohybová regenerácia v Žiline — relaxačná a športová masáž, bankovanie a kineziotejping. Individuálny prístup a online rezervácia.')
+@section('meta_keywords', 'masáže Žilina, masér Žilina, športová masáž Žilina, relaxačná masáž Žilina, pohybová regenerácia Žilina, bankovanie Žilina, kineziotejping, masáž chrbta Žilina, masážny salón Žilina')
 
 @section('content')
 
 {{-- HERO VIDEO --}}
 <section class="hero hero--video">
     <div class="hero-video__bg">
-        <video autoplay muted loop playsinline preload="metadata" poster="{{ asset('img/foto_1.webp') }}" class="hero-video__el">
-            <source src="{{ asset('video/regen_video.mp4') }}" type="video/mp4">
+        <video autoplay muted loop playsinline preload="metadata" poster="{{ asset('img/regen-client-massage-poster.webp') }}" class="hero-video__el" data-video-start="2">
+            <source src="{{ asset('video/regen-client-massage.mp4') }}" type="video/mp4">
         </video>
         <div class="hero-video__overlay"></div>
     </div>
     <div class="container hero-video__inner">
         <div class="hero-video__content">
+            <span class="hero-video__label anim-fade">Masáže Žilina · Pohybová regenerácia</span>
             <h1 class="hero-video__title anim-fade" data-delay="1">
-                Doprajte svojmu telu<br><span>čo si zaslúži</span>
+                Masáže v Žiline<br><span>pre vaše telo</span>
             </h1>
             <p class="hero-video__text anim-fade" data-delay="2">Odborné masáže a pohybová regenerácia, založené na zdravotníckom vzdelaní. Pomáhame cítiť sa lepšie prostredíctvom odborných masáží a regenerácie.</p>
             <div class="hero-video__actions anim-fade" data-delay="3">
@@ -50,7 +51,7 @@
             </div>
 
             <div class="intro__right anim-reveal" data-delay="1">
-                <p>Každému klientovi venujeme individuálny prístup založený na zdravotníckom vzdelaní, odborných masážach a pohybovej regenerácii. Každé telo je iné, preto nepracujeme podľa šablóny, ale podľa aktuálneho stavu a potrieb klienta.</p>
+                <p>V našom masážnom štúdiu v centre Žiliny sa venujeme relaxačným a športovým masážam, pohybovej regenerácii a bankovaniu. Každému klientovi venujeme individuálny prístup založený na zdravotníckom vzdelaní. Každé telo je iné, preto nepracujeme podľa šablóny, ale podľa aktuálneho stavu a potrieb klienta.</p>
 
                 <a href="{{ route('about') }}" class="btn btn--primary" style="margin-top: 1.5rem;">
                     Zistiť viac o nás

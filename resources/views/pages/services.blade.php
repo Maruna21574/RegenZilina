@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Služby — Masáže, Terapia & Regenerácia | REGEN ŽILINA')
-@section('meta_description', 'Kompletná ponuka služieb REGEN ŽILINA — relaxačná masáž, športová masáž, manuálna terapia, bankovanie, kineziotejping a maderoterapia. Prezrite si detaily a rezervujte online.')
-@section('meta_keywords', 'relaxačná masáž Žilina, športová masáž Žilina, manuálna terapia, bankovanie Žilina, kineziotejping Žilina, maderoterapia, masáž chrbta, masáž krku, uvoľnenie svalového napätia')
+@section('meta_description', 'Kompletná ponuka služieb REGEN ŽILINA — relaxačná a športová masáž, pohybová regenerácia, bankovanie, kineziotejping a maderoterapia. Rezervujte online.')
+@section('meta_keywords', 'relaxačná masáž Žilina, športová masáž Žilina, pohybová regenerácia Žilina, bankovanie Žilina, kineziotejping Žilina, maderoterapia, masáž chrbta, masáž krku, uvoľnenie svalového napätia')
 
 @section('content')
 
@@ -51,13 +51,13 @@
                 </div>
                 <div class="svc-detail__body">
                     <div class="svc-detail__desc">
-                        <p>Kombinovaná relaxačná masáž celého tela s prvkami bankovania. Ideálna voľba pre oddych od každodenného stresu a napätia. Masáž pracuje s dlhými, plynulými ťahmi zameranými na uvoľnenie a celkovú regeneráciu.</p>
-                        <p style="margin-top: 12px;">Bankovanie sa aplikuje na vybrané oblasti — najčastejšie chrbát a ramená — ako súčasť masáže zameranej na uvoľnenie a regeneráciu.</p>
+                        <p>Kombinovaná relaxačná masáž zameraná najmä na vrchnú časť tela — chrbát, ramená a krčnú oblasť — s prvkami bankovania. Je ideálnou voľbou na oddych od každodenného stresu a napätia. Masáž pracuje s dlhými, plynulými ťahmi zameranými na uvoľnenie a celkovú regeneráciu.</p>
+                        <p style="margin-top: 12px;">Bankovanie sa aplikuje na vybrané oblasti chrbta a ramien ako súčasť masáže zameranej na uvoľnenie a regeneráciu.</p>
                     </div>
                     <div class="svc-detail__features">
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Relaxačná masáž celého tela</span>
+                            <span>Relaxačná masáž chrbta, ramien a krčnej oblasti</span>
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -159,7 +159,7 @@
                 <div class="svc-detail__body">
                     <div class="svc-detail__desc">
                         <p>Individuálna hodina zameraná na pohybovú regeneráciu podľa aktuálnych potrieb klienta. Na začiatku sa porozprávame o vašich potrebách a následne sa cielene venujeme vybraným oblastiam tela.</p>
-                        <p style="margin-top: 12px;">Využívame myofasciálne uvoľnenie (MFR), jemné pohybové prvky, postizometrickú relaxáciu (PIR), mäkké techniky a hĺbkovú tkanivovú prácu. Rozsah a kombináciu techník prispôsobujeme individuálne.</p>
+                        <p style="margin-top: 12px;">Využívame myofasciálne uvoľnenie (MFR), jemné mobilizačné techniky, mäkké techniky a hĺbkovú tkanivovú prácu. Súčasťou regenerácie mäkkých tkanív môžu byť aj uvoľňovacie techniky svalov vrátane postizometrickej relaxácie (PIR). Rozsah a kombináciu techník prispôsobujeme individuálne.</p>
                     </div>
                     <div class="svc-detail__features">
                         <div class="svc-detail__feature">
@@ -172,7 +172,7 @@
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Jemné pohybové prvky pre kĺby a chrbticu</span>
+                            <span>Jemné mobilizačné techniky</span>
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>

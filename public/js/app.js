@@ -7,6 +7,92 @@ window.scrollTo(0, 0);
 document.addEventListener('DOMContentLoaded', () => {
     const CSRF = document.querySelector('meta[name="csrf-token"]')?.content;
 
+    document.querySelectorAll('video[data-video-start]').forEach(video => {
+        const startAt = Number(video.dataset.videoStart);
+        if (!Number.isFinite(startAt) || startAt <= 0) return;
+
+        const seekToStart = () => {
+            if (video.duration > startAt) video.currentTime = startAt;
+        };
+
+        if (video.readyState >= 1) seekToStart();
+        else video.addEventListener('loadedmetadata', seekToStart, { once: true });
+
+        video.addEventListener('timeupdate', () => {
+            if (video.currentTime < startAt - 0.25) seekToStart();
+        });
+    });
+
+    // =============================================
+    // COOKIE CONSENT
+    // =============================================
+    const consentKey = 'regen_cookie_consent_v1';
+    const cookieBanner = document.getElementById('cookieBanner');
+
+    function getCookieConsent() {
+        try {
+            const consent = JSON.parse(localStorage.getItem(consentKey));
+            const savedAt = Date.parse(consent?.savedAt);
+            const maxAge = 365 * 24 * 60 * 60 * 1000;
+            return consent?.necessary && savedAt && (Date.now() - savedAt < maxAge) ? consent : null;
+        } catch {
+            return null;
+        }
+    }
+
+    function loadConsentContent() {
+        const consent = getCookieConsent();
+        if (!consent?.external) return;
+
+        document.querySelectorAll('[data-map-consent]').forEach(container => {
+            if (container.querySelector('iframe')) return;
+
+            const iframe = document.createElement('iframe');
+            iframe.src = container.dataset.mapSrc;
+            iframe.width = '100%';
+            iframe.height = '450';
+            iframe.style.cssText = 'border:0;display:block;';
+            iframe.loading = 'lazy';
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            iframe.allowFullscreen = true;
+            iframe.title = 'Mapa prevádzky REGEN ŽILINA';
+            container.replaceChildren(iframe);
+        });
+    }
+
+    function saveCookieConsent(external) {
+        const externalContentIsLoaded = Boolean(document.querySelector('[data-map-consent] iframe'));
+        localStorage.setItem(consentKey, JSON.stringify({
+            necessary: true,
+            external,
+            savedAt: new Date().toISOString(),
+        }));
+        cookieBanner.hidden = true;
+        if (external) loadConsentContent();
+        window.dispatchEvent(new CustomEvent('regen:consent-changed', { detail: { external } }));
+        if (!external && externalContentIsLoaded) window.location.reload();
+    }
+
+    if (cookieBanner) {
+        cookieBanner.hidden = Boolean(getCookieConsent());
+        cookieBanner.querySelectorAll('[data-cookie-choice]').forEach(button => {
+            button.addEventListener('click', () => saveCookieConsent(button.dataset.cookieChoice === 'all'));
+        });
+
+        document.querySelectorAll('[data-cookie-settings]').forEach(button => {
+            button.addEventListener('click', () => {
+                cookieBanner.hidden = false;
+                cookieBanner.querySelector('[data-cookie-choice="necessary"]')?.focus();
+            });
+        });
+    }
+
+    document.querySelectorAll('[data-map-enable]').forEach(button => {
+        button.addEventListener('click', () => saveCookieConsent(true));
+    });
+
+    loadConsentContent();
+
     // =============================================
     // NAVBAR
     // =============================================
@@ -134,9 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem('regen_promo_timestamp');
         }
 
-        if (!alreadyUsed && !dismissed) {
+        let promoScheduled = false;
+        const schedulePromo = () => {
+            if (promoScheduled || alreadyUsed || dismissed) return;
+            promoScheduled = true;
             setTimeout(() => promo.classList.add('promo--visible'), 8000);
-        }
+        };
+
+        if (getCookieConsent()) schedulePromo();
+        window.addEventListener('regen:consent-changed', schedulePromo, { once: true });
 
         document.getElementById('promoClose')?.addEventListener('click', () => {
             promo.classList.remove('promo--visible');

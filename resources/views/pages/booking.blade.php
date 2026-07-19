@@ -75,7 +75,7 @@
                     <div class="booking__datetime">
                         <div class="booking__date-col">
                             <label class="form-label">Dátum</label>
-                            <input type="date" name="date" id="bookingDate" class="form-input" min="{{ date('Y-m-d') }}" required>
+                            <input type="date" name="date" id="bookingDate" class="form-input" min="{{ now()->addDay()->toDateString() }}" required>
                         </div>
                         <div class="booking__time-col">
                             <label class="form-label">Dostupné časy</label>

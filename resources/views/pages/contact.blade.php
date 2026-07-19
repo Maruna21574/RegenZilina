@@ -80,7 +80,14 @@
 </section>
 
 <section class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.69155306528!2d18.737427713390687!3d49.22537647468947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47145ea7866c4463%3A0x1bb4c8da0a9203e2!2sJ.%20M.%20Hurbana%20348%2F4%2C%20010%2001%20%C5%BDilina%2C%20Slovensko!5e0!3m2!1ssk!2sus!4v1782917040183!5m2!1ssk!2sus" width="100%" height="450" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="map-consent" data-map-consent data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.69155306528!2d18.737427713390687!3d49.22537647468947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47145ea7866c4463%3A0x1bb4c8da0a9203e2!2sJ.%20M.%20Hurbana%20348%2F4%2C%20010%2001%20%C5%BDilina%2C%20Slovensko!5e0!3m2!1ssk!2sus!4v1782917040183!5m2!1ssk!2sus">
+        <div class="map-consent__placeholder">
+            <h2>Mapa je zablokovaná</h2>
+            <p>Na zobrazenie mapy je potrebné povoliť externý obsah od Google Maps.</p>
+            <button type="button" class="btn btn--primary" data-map-enable>Povoliť a zobraziť mapu</button>
+            <a href="https://maps.google.com/?q=J.+M.+Hurbana+4,+Žilina+01001,+Slovensko" target="_blank" rel="noopener">Otvoriť adresu v Google Maps</a>
+        </div>
+    </div>
 </section>
 
 @endsection

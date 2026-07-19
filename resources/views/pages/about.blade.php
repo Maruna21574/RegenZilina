@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'O nás — REGEN ŽILINA | Profesionálne masáže v Žiline')
 @section('meta_description', 'Spoznajte REGEN ŽILINA — tím skúsených terapeutov špecializovaných na masáže, manuálnu terapiu a regeneráciu. Viac ako 5 rokov skúseností, individuálny prístup ku každému klientovi.')
-@section('meta_keywords', 'masáže Žilina, masér Žilina, manuálny terapeut Žilina, o nás REGEN, masážne štúdio Žilina, skúsený masér, fyzioterapia Žilina')
+@section('meta_keywords', 'masáže Žilina, masér Žilina, pohybová regenerácia Žilina, o nás REGEN, masážne štúdio Žilina, skúsený masér')
 
 @section('content')
 
@@ -17,14 +17,14 @@
         <div class="about-grid">
             <div class="about-grid__text anim-reveal">
                 <h2 class="h2">Kto sme</h2>
-                <p>V <strong>REGEN ŽILINA</strong> sa venujeme komplexnej regenerácii, masážam, manuálnym technikám a bankovaniu.</p>
+                <p>V <strong>REGEN ŽILINA</strong> sa venujeme komplexnej regenerácii, masážam, pohybovým technikám a bankovaniu.</p>
                 <p>Každá procedúra je prispôsobená individuálne podľa vašich potrieb a aktuálneho stavu.</p>
                 <p>Pracujeme v modernom a príjemnom prostredí, kde sa môžete plne uvoľniť a sústrediť sa na svoju regeneráciu.</p>
             </div>
             <div class="about-grid__visual anim-reveal" data-delay="1">
                 <div class="about-visual">
                     <div class="about-visual__block about-visual__block--1">
-                        <img src="{{ asset('img/foto_1.webp') }}" alt="Profesionálna masáž v REGEN ŽILINA — manuálna terapia chrbta" loading="lazy">
+                        <img src="{{ asset('img/foto_1.webp') }}" alt="Profesionálna masáž chrbta v REGEN ŽILINA" loading="lazy">
                     </div>
                     <div class="about-visual__block about-visual__block--2">
                         <img src="{{ asset('img/foto_2.webp') }}" alt="Interiér masážneho štúdia REGEN ŽILINA" loading="lazy">
@@ -35,6 +35,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section--soft about-videos">
+    <div class="container">
+        <div class="section__head anim-reveal">
+            <span class="label">Naša práca</span>
+            <h2 class="h2">Pozrite sa, ako pracujeme</h2>
+        </div>
+        <div class="about-videos__grid">
+            <figure class="about-video anim-reveal">
+                <video controls muted loop playsinline preload="metadata" poster="{{ asset('img/regen-banking-poster.webp') }}">
+                    <source src="{{ asset('video/regen-banking.mp4') }}" type="video/mp4">
+                </video>
+                <figcaption>Bankovanie ako súčasť regenerácie</figcaption>
+            </figure>
+            <figure class="about-video anim-reveal" data-delay="1">
+                <video controls muted loop playsinline preload="metadata" poster="{{ asset('img/regen-mobilization-poster.webp') }}">
+                    <source src="{{ asset('video/regen-mobilization.mp4') }}" type="video/mp4">
+                </video>
+                <figcaption>Ukážka jemnej mobilizačnej techniky</figcaption>
+            </figure>
         </div>
     </div>
 </section>
@@ -51,7 +74,7 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15l-2 5l9-11h-5l2-5L7 15h5z"/></svg>
                 </div>
                 <h3>Skúsenosti</h3>
-                <p>Dlhoročná prax v oblasti masáží, manuálnych techník a pohybovej regenerácie.</p>
+                <p>Dlhoročná prax v oblasti masáží, pohybových techník a regenerácie.</p>
             </div>
             <div class="value-card anim-reveal" data-delay="1">
                 <div class="value-card__icon">

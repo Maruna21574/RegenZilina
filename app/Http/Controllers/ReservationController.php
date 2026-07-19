@@ -8,6 +8,7 @@ use App\Models\BlockedSlot;
 use App\Models\DiscountCode;
 use App\Models\Reservation;
 use App\Models\Service;
+use App\Support\ReservationSchedule;
 use Illuminate\Contracts\Cache\LockTimeoutException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class ReservationController extends Controller
     public function getAvailableSlots(Request $request): JsonResponse
     {
         $request->validate([
-            'date' => 'required|date|after_or_equal:today',
+            'date' => 'required|date|after:today',
         ]);
 
         $date = $request->input('date');
@@ -52,18 +53,7 @@ class ReservationController extends Controller
             ->map(fn($t) => substr($t, 0, 5))
             ->toArray();
 
-        $unavailable = array_merge($blockedTimes, $bookedTimes);
-
-        $slots = [];
-        $start = 9;
-        $end = ($dayOfWeek == 6) ? 14 : 18;
-
-        for ($hour = $start; $hour < $end; $hour++) {
-            $time = sprintf('%02d:00', $hour);
-            if (!in_array($time, $unavailable)) {
-                $slots[] = $time;
-            }
-        }
+        $slots = ReservationSchedule::availableSlots((int) $dayOfWeek, $bookedTimes, $blockedTimes);
 
         return response()->json($slots);
     }
@@ -76,7 +66,7 @@ class ReservationController extends Controller
             'surname' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
             'email' => 'required|email|max:255',
-            'date' => 'required|date|after_or_equal:today',
+            'date' => 'required|date|after:today',
             'time' => 'required|string',
             'note' => 'nullable|string|max:1000',
             'discount_code' => 'nullable|string|max:50',
@@ -103,8 +93,12 @@ class ReservationController extends Controller
             return response()->json(['message' => 'V nedeľu nepracujeme.'], 422);
         }
 
+        if (!ReservationSchedule::isWorkingTime($validated['time'], (int) $dayOfWeek)) {
+            return response()->json(['message' => 'Tento čas nie je možné rezervovať.'], 422);
+        }
+
         try {
-            return Cache::lock('reservation-slot-' . $validated['date'] . '-' . $validated['time'], 10)
+            return Cache::lock('reservation-day-' . $validated['date'], 10)
                 ->block(5, function () use ($validated) {
                     $isBlocked = BlockedSlot::where('date', $validated['date'])
                         ->where(function ($q) use ($validated) {
@@ -115,13 +109,14 @@ class ReservationController extends Controller
                         return response()->json(['message' => 'Tento termín nie je dostupný.'], 422);
                     }
 
-                    $isTaken = Reservation::where('date', $validated['date'])
-                        ->where('time', $validated['time'])
+                    $bookedTimes = Reservation::where('date', $validated['date'])
                         ->whereIn('status', ['pending', 'confirmed'])
-                        ->exists();
+                        ->pluck('time')
+                        ->map(fn($time) => substr($time, 0, 5))
+                        ->toArray();
 
-                    if ($isTaken) {
-                        return response()->json(['message' => 'Tento termín je už obsadený.'], 422);
+                    if (ReservationSchedule::conflictsWithReservation($validated['time'], $bookedTimes)) {
+                        return response()->json(['message' => 'Od inej rezervácie musí byť odstup aspoň 90 minút.'], 422);
                     }
 
                     $reservation = Reservation::create($validated);

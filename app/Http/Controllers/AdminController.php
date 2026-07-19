@@ -7,6 +7,7 @@ use App\Mail\ReservationConfirmed;
 use App\Models\BlockedSlot;
 use App\Models\Reservation;
 use App\Models\Service;
+use App\Support\ReservationSchedule;
 use Carbon\Carbon;
 use Illuminate\Contracts\Cache\LockTimeoutException;
 use Illuminate\Http\Request;
@@ -31,8 +32,8 @@ class AdminController extends Controller
         ]);
 
         if (
-            $request->email === env('ADMIN_EMAIL') &&
-            $request->password === env('ADMIN_PASSWORD')
+            $request->email === config('services.admin.email') &&
+            $request->password === config('services.admin.password')
         ) {
             session(['admin_logged_in' => true]);
             return redirect('/admin');
@@ -132,20 +133,7 @@ class AdminController extends Controller
             ->map(fn($t) => substr($t, 0, 5))
             ->toArray();
 
-        $unavailable = array_merge($blockedTimes, $bookedTimes);
-
-        $slots = [];
-        $start = 9;
-        $end = ($dayOfWeek == 6) ? 14 : 18;
-
-        for ($hour = $start; $hour < $end; $hour++) {
-            $time = sprintf('%02d:00', $hour);
-            if (!in_array($time, $unavailable)) {
-                $slots[] = $time;
-            }
-        }
-
-        return $slots;
+        return ReservationSchedule::availableSlots($dayOfWeek, $bookedTimes, $blockedTimes);
     }
 
     public function storeManualReservation(Request $request)
@@ -173,8 +161,13 @@ class AdminController extends Controller
                 ->withErrors(['date' => 'V nedeľu nepracujeme.'])->withInput();
         }
 
+        if (!ReservationSchedule::isWorkingTime($validated['time'], $dayOfWeek)) {
+            return redirect()->route('admin.calendar', $redirectParams)
+                ->withErrors(['time' => 'Tento čas nie je možné rezervovať.'])->withInput();
+        }
+
         try {
-            return Cache::lock('reservation-slot-' . $validated['date'] . '-' . $validated['time'], 10)
+            return Cache::lock('reservation-day-' . $validated['date'], 10)
                 ->block(5, function () use ($validated, $redirectParams) {
                     $isBlocked = BlockedSlot::where('date', $validated['date'])
                         ->where(function ($q) use ($validated) {
@@ -186,14 +179,15 @@ class AdminController extends Controller
                             ->withErrors(['time' => 'Tento termín nie je dostupný.'])->withInput();
                     }
 
-                    $isTaken = Reservation::where('date', $validated['date'])
-                        ->where('time', $validated['time'])
+                    $bookedTimes = Reservation::where('date', $validated['date'])
                         ->whereIn('status', ['pending', 'confirmed'])
-                        ->exists();
+                        ->pluck('time')
+                        ->map(fn($time) => substr($time, 0, 5))
+                        ->toArray();
 
-                    if ($isTaken) {
+                    if (ReservationSchedule::conflictsWithReservation($validated['time'], $bookedTimes)) {
                         return redirect()->route('admin.calendar', $redirectParams)
-                            ->withErrors(['time' => 'Tento termín je už obsadený.'])->withInput();
+                            ->withErrors(['time' => 'Od inej rezervácie musí byť odstup aspoň 90 minút.'])->withInput();
                     }
 
                     $validated['status'] = 'confirmed';

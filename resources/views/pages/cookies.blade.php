@@ -27,22 +27,21 @@
                 .legal-content th { background-color: #f3f4f6; font-weight: 600; }
             </style>
             <div class="legal-content__intro">
-                <p><strong>Posledná aktualizácia:</strong> 11. júla 2026</p>
+                <p><strong>Posledná aktualizácia:</strong> 19. júla 2026</p>
                 <p>Táto politika cookies vysvetľuje, ako REGEN ŽILINA používa cookies a podobné sledovacie technológie na našej webovej stránke regenzilina.sk.</p>
             </div>
 
             <h2>1. Čo sú cookies?</h2>
-            <p>Cookies sú malé textové súbory, ktoré sa ukladajú do pamäte vášho počítača alebo mobilného zariadenia, keď navštívite našu webovú stránku. Umožňujú nám:</p>
+            <p>Cookies sú malé textové súbory, ktoré sa ukladajú do vášho zariadenia pri návšteve webovej stránky. Podobne môže prehliadač ukladať nastavenia do lokálneho úložiska (localStorage).</p>
             <ul>
-                <li>Zapamätať si vaše nastavenia a preferencie</li>
-                <li>Rozpoznať vás pri budúcich návštevách</li>
-                <li>Analyzovať, ako používate našu stránku</li>
-                <li>Prispôsobiť obsah a reklamy</li>
+                <li>udržiavať bezpečnú reláciu a chrániť formuláre,</li>
+                <li>zapamätať si vašu voľbu súhlasu,</li>
+                <li>sprístupniť funkcie, ktoré ste si vyžiadali.</li>
             </ul>
 
             <h2>2. Typy cookies, ktoré používame</h2>
 
-            <h3>A) Potrebné cookies (Technical / Functional)</h3>
+            <h3>A) Nevyhnutné cookies</h3>
             <p><strong>Povinné:</strong> Áno — bez týchto cookies stránka nebude správne fungovať.</p>
             <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
                 <tr style="background-color: #f0f0f0;">
@@ -51,62 +50,30 @@
                     <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Doba uchovávky</th>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 10px;">PHPSESSID</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Spravovanie relácie používateľa</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Koniec relácie</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">regen-zilina-session</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Bezpečná relácia, rezervácia a prihlásenie administrátora</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">120 minút od poslednej aktivity</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 10px;">csrf_token</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Bezpečnosť — ochrána pred CSRF útokmi</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Koniec relácie</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 10px;">admin_logged_in</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Uchovávanie stavu prihlásenia (iba admin)</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">24 hodín</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 10px;">booking_session</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Ochrana rezervačného procesu pred duplikátnymi rezerváciami</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Koniec relácie</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">XSRF-TOKEN</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Ochrana formulárov pred CSRF útokmi (ak ju aplikácia odošle)</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">120 minút</td>
                 </tr>
             </table>
 
-            <h3>B) Analytické cookies (Analytics)</h3>
-            <p><strong>Povinné:</strong> Nie — vyžadujú váš súhlas.</p>
-            <p>Používame analytické cookies na pochopenie toho, ako návštevníci používajú našu webovú stránku. Tieto cookies nám pomáhajú:</p>
-            <ul>
-                <li>Identifikovať najobľúbenejšie stránky</li>
-                <li>Zistiť, kde návštevníci opúšťajú našu stránku</li>
-                <li>Zlepšovať používateľskú skúsenosť</li>
-            </ul>
-            <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
-                <tr style="background-color: #f0f0f0;">
-                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Provider</th>
-                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Cookies</th>
-                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Doba uchovávky</th>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Google Analytics</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">_ga, _ga_*, _gid</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">2 roky</td>
-                </tr>
-            </table>
+            <h3>B) Analytické a marketingové cookies</h3>
+            <p>V súčasnosti nepoužívame Google Analytics, reklamné pixely ani iné analytické či marketingové cookies.</p>
 
-            <h3>C) Preference cookies (Functionality)</h3>
-            <p><strong>Povinné:</strong> Nie — vyžadujú váš súhlas.</p>
-            <p>Tieto cookies si pamätajú vaše voľby a preferencie:</p>
+            <h3>C) Lokálne úložisko pre nastavenia</h3>
+            <p>Nasledujúce údaje nie sú cookies. Ukladajú sa iba vo vašom prehliadači:</p>
             <ul>
-                <li>Jazyk stránky</li>
-                <li>Vypnutý promo pop-up</li>
-                <li>Ostatné personalizované nastavenia</li>
+                <li><strong>regen_cookie_consent_v1</strong> — vaša voľba cookies a externého obsahu, najviac 12 mesiacov,</li>
+                <li><strong>regen_promo_code, regen_promo_percent, regen_promo_timestamp</strong> — získaná zľava, 30 dní,</li>
+                <li><strong>regen_promo_dismissed</strong> — zatvorenie ponuky počas aktuálnej karty prehliadača.</li>
             </ul>
 
-            <h3>D) Marketing / Retargeting cookies</h3>
-            <p><strong>Povinné:</strong> Nie — vyžadujú váš výslovný súhlas.</p>
-            <p>Tieto cookies nám pomáhajú vám ukázať relevantné reklamy na sociálnych sieťach a iných webových stránkach na základe vašich záujmov. V súčasnosti ich nepoužívame.</p>
-
-            <h3>E) Cookies tretích strán</h3>
+            <h3>D) Externý obsah</h3>
+            <p>Vloženú mapu Google Maps načítame až po vašom súhlase. Po načítaní môže Google spracovať technické údaje, napríklad IP adresu, a podľa vašich nastavení vytvoriť vlastné cookies. Tieto cookies neriadime.</p>
             <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
                 <tr style="background-color: #f0f0f0;">
                     <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Služba</th>
@@ -116,11 +83,6 @@
                 <tr>
                     <td style="border: 1px solid #ddd; padding: 10px;">Google Maps</td>
                     <td style="border: 1px solid #ddd; padding: 10px;">Vložená mapa našej polohy</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Fonts Google</td>
-                    <td style="border: 1px solid #ddd; padding: 10px;">Vlastný font Cormorant Garamond</td>
                     <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
                 </tr>
             </table>
@@ -133,21 +95,18 @@
                 <li><strong>Safari:</strong> Preferencie → Súkromie → Cookies a údaje webov</li>
                 <li><strong>Edge:</strong> Nastavenia → Súkromie, vyhľadávanie a služby → Cookies a iné údaje stránok</li>
             </ul>
-            <p><strong>Globálny Voliteľ Opt-Out (DNT):</strong> Ak máte v prehliadači nastavenú možnosť "Do Not Track", je možné, že niektoré cookies nebudú nastavené.</p>
-
-            <h2>4. Konsenty a súhlasy</h2>
-            <p>Pri vašej prvej návšteve webovej stránky vám ponúkneme súhlas s nevyhnutnými a analytickými cookies. Svoju voľbu môžete kedykoľvek zmeniť prostredníctvom:</p>
+            <h2>4. Súhlas a jeho zmena</h2>
+            <p>Pri prvej návšteve si môžete ponechať iba nevyhnutné cookies alebo povoliť externý obsah. Svoju voľbu môžete kedykoľvek zmeniť:</p>
             <ul>
-                <li>Súhlasového banera v spodnej časti stránky</li>
-                <li>Nastavenia v menu na stránke (ak dostupné)</li>
-                <li>Nastavenían vášho prehliadača</li>
+                <li>cez odkaz „Nastavenia cookies“ v pätičke,</li>
+                <li>vymazaním údajov stránky v nastaveniach prehliadača.</li>
             </ul>
 
             <h2>5. Bezpečnosť a súkromie</h2>
-            <p>Vaše súkromie je pre nás dôležité. Cookies sú šifrované a bezpečne uložené. Neobsahujú citlivé informácie ako heslá alebo platobné údaje.</p>
+            <p>Relačná cookie je chránená nastaveniami HttpOnly a SameSite=Lax. Neukladáme do nej heslá ani platobné údaje.</p>
 
             <h2>6. Zmeny tejto politiky</h2>
-            <p>Táto politika cookies sa môže zmeniť bez predchádzajúceho varovaní. Odporúčame si ju periodicky prečítať, aby ste boli na aktuálnom.</p>
+            <p>Túto politiku môžeme aktualizovať pri zmene používaných technológií. Aktuálny dátum nájdete v úvode dokumentu.</p>
 
             <h2>7. Kontakt a právne informácie</h2>
             <p>Ak máte akékoľvek otázky ohľadom tejto politiky cookies:</p>

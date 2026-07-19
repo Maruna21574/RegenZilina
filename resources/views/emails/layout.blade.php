@@ -13,7 +13,7 @@
                     <tr>
                         <td style="background-color: #173124; padding: 32px 40px; text-align: center;">
                             <img src="{{ asset('img/regen_white.png') }}" alt="REGEN ŽILINA" style="height: 50px; width: auto; margin-bottom: 12px;">
-                            <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 13px; letter-spacing: 1px;">Masáže · Regenerácia · Manuálna terapia</p>
+                            <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 13px; letter-spacing: 1px;">Masáže · Pohybová regenerácia · Bankovanie</p>
                         </td>
                     </tr>
                     {{-- Body --}}
