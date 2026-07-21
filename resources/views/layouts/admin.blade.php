@@ -556,5 +556,6 @@
             document.getElementById('adminSidebar').classList.toggle('sidebar--open');
         });
     </script>
+    @stack('scripts')
 </body>
 </html>

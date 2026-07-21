@@ -258,6 +258,18 @@ class AdminController extends Controller
         return view('admin.blocked-slots', compact('slots'));
     }
 
+    public function slotTimes(Request $request)
+    {
+        $request->validate([
+            'date' => 'required|date',
+        ]);
+
+        $dayOfWeek = (int) date('N', strtotime($request->input('date')));
+        $times = ReservationSchedule::availableSlots($dayOfWeek, [], []);
+
+        return response()->json($times);
+    }
+
     public function storeBlockedSlot(Request $request)
     {
         $request->validate([

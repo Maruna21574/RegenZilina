@@ -160,6 +160,7 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::post('/rezervacie/{reservation}/potvrdit', [AdminController::class, 'confirmReservation'])->name('admin.reservation.confirm');
     Route::post('/rezervacie/{reservation}/zrusit', [AdminController::class, 'cancelReservation'])->name('admin.reservation.cancel');
     Route::get('/blokovane-terminy', [AdminController::class, 'blockedSlots'])->name('admin.blocked-slots');
+    Route::get('/api/casy-terminov', [AdminController::class, 'slotTimes'])->name('admin.slot-times');
     Route::post('/blokovane-terminy', [AdminController::class, 'storeBlockedSlot'])->name('admin.blocked-slots.store');
     Route::delete('/blokovane-terminy/{blockedSlot}', [AdminController::class, 'deleteBlockedSlot'])->name('admin.blocked-slots.delete');
 });

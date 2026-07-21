@@ -14,15 +14,12 @@
         <div class="form-row">
             <div class="form-group-admin">
                 <label>Dátum *</label>
-                <input type="date" name="date" required min="{{ date('Y-m-d') }}">
+                <input type="date" id="blockDate" name="date" required min="{{ date('Y-m-d') }}">
             </div>
             <div class="form-group-admin">
                 <label>Čas (prázdne = celý deň)</label>
-                <select name="time">
+                <select id="blockTime" name="time">
                     <option value="">Celý deň</option>
-                    @for($h = 9; $h < 18; $h++)
-                        <option value="{{ sprintf('%02d:00', $h) }}">{{ sprintf('%02d:00', $h) }}</option>
-                    @endfor
                 </select>
             </div>
             <div class="form-group-admin">
@@ -93,4 +90,28 @@
     </div>
     @endif
 </div>
+
+@push('scripts')
+<script>
+    (function () {
+        const dateInput = document.getElementById('blockDate');
+        const timeSelect = document.getElementById('blockTime');
+
+        dateInput?.addEventListener('change', async () => {
+            timeSelect.innerHTML = '<option value="">Celý deň</option>';
+            if (!dateInput.value) return;
+
+            const res = await fetch(`{{ route('admin.slot-times') }}?date=${dateInput.value}`);
+            const times = await res.json();
+
+            times.forEach(time => {
+                const option = document.createElement('option');
+                option.value = time;
+                option.textContent = time;
+                timeSelect.appendChild(option);
+            });
+        });
+    })();
+</script>
+@endpush
 @endsection
