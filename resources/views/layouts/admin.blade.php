@@ -212,6 +212,23 @@
         .form-group-admin input, .form-group-admin select { padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; font-family: inherit; }
         .form-group-admin input:focus, .form-group-admin select:focus { outline: none; border-color: var(--primary); }
 
+        .time-checks { display: flex; flex-wrap: wrap; gap: 8px; }
+        .time-check {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .time-check:has(input:checked) { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .time-check input[type="checkbox"] { accent-color: var(--primary); }
+
         .alert {
             padding: 12px 20px;
             border-radius: 8px;

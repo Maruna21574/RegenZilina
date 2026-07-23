@@ -274,17 +274,35 @@ class AdminController extends Controller
     {
         $request->validate([
             'date' => 'required|date',
-            'time' => 'nullable|string',
+            'whole_day' => 'nullable|boolean',
+            'times' => 'nullable|array',
+            'times.*' => 'string',
             'reason' => 'nullable|string|max:255',
         ]);
 
-        BlockedSlot::create([
-            'date' => $request->date,
-            'time' => $request->time ?: null,
-            'reason' => $request->reason,
-        ]);
+        if ($request->boolean('whole_day')) {
+            BlockedSlot::firstOrCreate(
+                ['date' => $request->date, 'time' => null],
+                ['reason' => $request->reason]
+            );
 
-        return back()->with('success', 'Termín bol zablokovaný.');
+            return back()->with('success', 'Celý deň bol zablokovaný.');
+        }
+
+        $times = $request->input('times', []);
+
+        if (empty($times)) {
+            return back()->withErrors(['times' => 'Vyberte aspoň jeden čas, alebo zvoľte celý deň.'])->withInput();
+        }
+
+        foreach ($times as $time) {
+            BlockedSlot::firstOrCreate(
+                ['date' => $request->date, 'time' => $time],
+                ['reason' => $request->reason]
+            );
+        }
+
+        return back()->with('success', count($times) > 1 ? 'Termíny boli zablokované.' : 'Termín bol zablokovaný.');
     }
 
     public function deleteBlockedSlot(BlockedSlot $blockedSlot)

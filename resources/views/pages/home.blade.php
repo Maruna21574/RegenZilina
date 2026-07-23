@@ -16,9 +16,9 @@
     </div>
     <div class="container hero-video__inner">
         <div class="hero-video__content">
-            <span class="hero-video__label anim-fade">Masáže Žilina · Pohybová regenerácia</span>
+            <span class="hero-video__label anim-fade">Masáže · Pohybová regenerácia</span>
             <h1 class="hero-video__title anim-fade" data-delay="1">
-                Masáže v Žiline<br><span>pre vaše telo</span>
+                Masáže v Žiline<br><span>s odborným prístupom</span>
             </h1>
             <p class="hero-video__text anim-fade" data-delay="2">Odborné masáže a pohybová regenerácia, založené na zdravotníckom vzdelaní. Pomáhame cítiť sa lepšie prostredíctvom odborných masáží a regenerácie.</p>
             <div class="hero-video__actions anim-fade" data-delay="3">

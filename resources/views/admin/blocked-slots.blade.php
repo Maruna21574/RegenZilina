@@ -17,17 +17,26 @@
                 <input type="date" id="blockDate" name="date" required min="{{ date('Y-m-d') }}">
             </div>
             <div class="form-group-admin">
-                <label>Čas (prázdne = celý deň)</label>
-                <select id="blockTime" name="time">
-                    <option value="">Celý deň</option>
-                </select>
-            </div>
-            <div class="form-group-admin">
                 <label>Dôvod</label>
                 <input type="text" name="reason" placeholder="Napr. dovolenka">
             </div>
-            <button type="submit" class="btn-sm btn-sm--primary">Zablokovať</button>
         </div>
+
+        <div class="form-group-admin" style="margin-top: 16px;">
+            <label style="text-transform:none; font-size:14px;">
+                <input type="checkbox" id="wholeDayCheckbox" name="whole_day" value="1">
+                Zablokovať celý deň
+            </label>
+        </div>
+
+        <div class="form-group-admin" id="timesWrap" style="margin-top: 12px;">
+            <label>Časy (vyber jeden alebo viac)</label>
+            <div id="timesCheckboxes" class="time-checks">
+                <span style="color:#999; font-size:13px;">Najprv vyber dátum.</span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-sm btn-sm--primary" style="margin-top: 16px;">Zablokovať</button>
     </form>
 </div>
 
@@ -95,20 +104,38 @@
 <script>
     (function () {
         const dateInput = document.getElementById('blockDate');
-        const timeSelect = document.getElementById('blockTime');
+        const timesWrap = document.getElementById('timesWrap');
+        const timesBox = document.getElementById('timesCheckboxes');
+        const wholeDayCheckbox = document.getElementById('wholeDayCheckbox');
 
         dateInput?.addEventListener('change', async () => {
-            timeSelect.innerHTML = '<option value="">Celý deň</option>';
-            if (!dateInput.value) return;
+            timesBox.innerHTML = '';
+            if (!dateInput.value) {
+                timesBox.innerHTML = '<span style="color:#999; font-size:13px;">Najprv vyber dátum.</span>';
+                return;
+            }
 
             const res = await fetch(`{{ route('admin.slot-times') }}?date=${dateInput.value}`);
             const times = await res.json();
 
+            if (!times.length) {
+                timesBox.innerHTML = '<span style="color:#999; font-size:13px;">Žiadne dostupné časy pre tento deň.</span>';
+                return;
+            }
+
             times.forEach(time => {
-                const option = document.createElement('option');
-                option.value = time;
-                option.textContent = time;
-                timeSelect.appendChild(option);
+                const label = document.createElement('label');
+                label.className = 'time-check';
+                label.innerHTML = `<input type="checkbox" name="times[]" value="${time}"> ${time}`;
+                timesBox.appendChild(label);
+            });
+        });
+
+        wholeDayCheckbox?.addEventListener('change', () => {
+            const disabled = wholeDayCheckbox.checked;
+            timesWrap.style.opacity = disabled ? '0.5' : '1';
+            timesBox.querySelectorAll('input[type=checkbox]').forEach(cb => {
+                cb.disabled = disabled;
             });
         });
     })();
