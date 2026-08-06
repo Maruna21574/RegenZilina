@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================================
     const consentKey = 'regen_cookie_consent_v1';
     const cookieBanner = document.getElementById('cookieBanner');
+    const cookieFab = document.getElementById('cookieFab');
+
+    function syncCookieFab() {
+        cookieFab?.classList.toggle('cookie-fab--hidden', cookieBanner ? !cookieBanner.hidden : false);
+    }
 
     function getCookieConsent() {
         try {
@@ -68,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             savedAt: new Date().toISOString(),
         }));
         cookieBanner.hidden = true;
+        syncCookieFab();
         if (external) loadConsentContent();
         window.dispatchEvent(new CustomEvent('regen:consent-changed', { detail: { external } }));
         if (!external && externalContentIsLoaded) window.location.reload();
@@ -75,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (cookieBanner) {
         cookieBanner.hidden = Boolean(getCookieConsent());
+        syncCookieFab();
         cookieBanner.querySelectorAll('[data-cookie-choice]').forEach(button => {
             button.addEventListener('click', () => saveCookieConsent(button.dataset.cookieChoice === 'all'));
         });
@@ -82,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-cookie-settings]').forEach(button => {
             button.addEventListener('click', () => {
                 cookieBanner.hidden = false;
+                syncCookieFab();
                 cookieBanner.querySelector('[data-cookie-choice="necessary"]')?.focus();
             });
         });

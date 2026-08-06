@@ -28,7 +28,7 @@
             </style>
             <div class="legal-content__intro">
                 <p><strong>Posledná aktualizácia:</strong> 11. júla 2026</p>
-                <p>Tieto obchodné podmienky upravujú vzťah medzi REGEN ŽILINA a zákazníkmi. Používaním našej webovej stránky a rezervačného systému súhlasíte s týmito podmienkami.</p>
+                <p>Tieto obchodné podmienky upravujú vzťah medzi REGEN ŽILINA a jej zákazníkmi. Používaním našej webovej stránky a rezervačného systému s nimi súhlasíte.</p>
             </div>
 
             <h2>1. Popis služieb</h2>
@@ -40,85 +40,85 @@
                 <li>Maderoterapiu (masáž drevením)</li>
                 <li>Ďalšie špecializované procedúry podľa individuálnej konzultácie</li>
             </ul>
-            <p>Všetky služby sú poskytované kvalifikovanými terapeutmi v profesionálnom prostredí.</p>
+            <p>Všetky služby poskytujú kvalifikovaní terapeuti v profesionálnom prostredí.</p>
 
             <h2>2. Rezervačný systém</h2>
-            <p><strong>Online rezervácia:</strong> Rezervácie je možné vytvoriť prostredníctvom našej webovej stránky.</p>
-            <p><strong>Potvrdenie:</strong> Rezervácia sa považuje za potvrdené po prijatí potvrdenia emailom.</p>
-            <p><strong>Zmena rezervácie:</strong> Zmeny je možné vykonať najneskôr 24 hodín pred stanoveným časom. Prosím, kontaktujte nás na info@regenzilina.sk alebo +421 910 900 664.</p>
+            <p><strong>Online rezervácia:</strong> Rezerváciu si môžete vytvoriť priamo cez našu webovú stránku.</p>
+            <p><strong>Potvrdenie:</strong> Rezervácia je potvrdená vo chvíli, keď vám príde potvrdzujúci e-mail.</p>
+            <p><strong>Zmena rezervácie:</strong> Zmenu termínu je možné vykonať najneskôr 24 hodín vopred. Napíšte nám na info@regenzilina.sk alebo zavolajte na +421 910 900 664.</p>
 
             <h2>3. Zrušenie a storno podmienky</h2>
-            <p><strong>Zrušenie zákazníkom:</strong></p>
+            <p><strong>Zrušenie zo strany zákazníka:</strong></p>
             <ul>
-                <li><strong>Viac ako 24 hodín dopredu:</strong> Bezplatné zrušenie bez penálne</li>
-                <li><strong>Menej ako 24 hodín dopredu:</strong> Poplatek za storno vo výške 50% z ceny služby</li>
-                <li><strong>Bez upozornenia (no-show):</strong> Poplatek za storno vo výške 100% z ceny služby</li>
+                <li><strong>Viac ako 24 hodín vopred:</strong> zrušenie je bezplatné, bez akéhokoľvek poplatku</li>
+                <li><strong>Menej ako 24 hodín vopred:</strong> účtujeme storno poplatok vo výške 50 % z ceny služby</li>
+                <li><strong>Bez ospravedlnenia (no-show):</strong> účtujeme storno poplatok vo výške 100 % z ceny služby</li>
             </ul>
-            <p><strong>Zrušenie REGEN ŽILINA:</strong> Máme právo zrušiť rezerváciu s rozumným varovaním (minimum 48 hodín) v prípade neplánovaných okolností alebo choroby terapeuta.</p>
+            <p><strong>Zrušenie zo strany REGEN ŽILINA:</strong> Vyhradzujeme si právo zrušiť rezerváciu s primeraným predstihom (minimálne 48 hodín), napríklad pri neočakávaných okolnostiach alebo chorobe terapeuta.</p>
 
             <h2>4. Spôsob platby</h2>
             <ul>
-                <li><strong>Platba pri príchode:</strong> Hotovosť alebo platobná karta v clinic</li>
-                <li><strong>Online platba:</strong> Pri online platbe je požadovaná úhrada minimálne 2 hodiny pred rezerváciou (v budúcnosti)</li>
+                <li><strong>Platba pri príchode:</strong> hotovosťou alebo platobnou kartou priamo u nás</li>
+                <li><strong>Online platba:</strong> v budúcnosti bude možná aj úhrada online, a to najneskôr 2 hodiny pred termínom rezervácie</li>
             </ul>
-            <p>Rabatné kódy a zľavy nesmú byť kombinované s inými ponukami (ak nie je uvedené inak).</p>
+            <p>Zľavové kódy a akcie nie je možné kombinovať s inými ponukami, pokiaľ nie je uvedené inak.</p>
 
             <h2>5. Práva a povinnosti zákazníka</h2>
             <p><strong>Zákazník sa zaväzuje:</strong></p>
             <ul>
-                <li>Dostaviť sa na čas alebo aspoň 5 minút pred začatím služby</li>
+                <li>Dostaviť sa na dohodnutý termín, v ideálnom prípade aspoň 5 minút vopred</li>
                 <li>Poskytnúť správne a úplné informácie o svojom zdravotnom stave</li>
-                <li>Dodržiavať príkazy a odporúčania terapeuta</li>
-                <li>Chovať sa slušne a rešpektovať prostoredí a personál</li>
-                <li>Dodržiavať našu politiku zrušenia a storna</li>
+                <li>Riadiť sa pokynmi a odporúčaniami terapeuta</li>
+                <li>Správať sa slušne a rešpektovať priestory aj personál</li>
+                <li>Dodržiavať naše storno podmienky</li>
             </ul>
             <p><strong>Zákazník má právo:</strong></p>
             <ul>
-                <li>Očakávať profesionálne a bezpečné poskytovanie služieb</li>
-                <li>Požiadať o prebrzdenie procedúry v ktoromkoľvek čase</li>
-                <li>Priať si si si dodatočnú konzultáciu alebo individualizáciu služby</li>
+                <li>Očakávať profesionálne a bezpečné poskytnutie služby</li>
+                <li>Kedykoľvek požiadať o prerušenie procedúry</li>
+                <li>Požiadať o doplňujúcu konzultáciu alebo prispôsobenie služby svojim potrebám</li>
             </ul>
 
             <h2>6. Kontraindikácie a zdravotné opatrenia</h2>
-            <p>Určité zdravotné stavy môžu predstavovať kontraindikáciu pre naše služby. Pred rezerváciou musíte:</p>
+            <p>Niektoré zdravotné stavy môžu byť pre naše služby kontraindikáciou. Pred rezerváciou by ste preto mali:</p>
             <ul>
-                <li>Informovať nás o okolnostiach dôležitých pre bezpečné poskytnutie služby</li>
-                <li>Konzultovať s vašim lekárom, ak ste si nie ste istí, či je daná služba pre vás vhodná</li>
-                <li>Informovať nás o akýchkoľvek alergických reakciách na esenciálne oleje alebo iné ingrediencie</li>
+                <li>Informovať nás o všetkých okolnostiach dôležitých pre bezpečné poskytnutie služby</li>
+                <li>V prípade pochybností konzultovať vhodnosť služby so svojím lekárom</li>
+                <li>Upozorniť nás na prípadné alergické reakcie na esenciálne oleje alebo iné použité látky</li>
             </ul>
-            <p>REGEN ŽILINA si vyhrazuje právo odmietnuť poskytnutie služby, ak máme dôvod domnievať sa, že by to mohlo poškodiť vaše zdravie.</p>
+            <p>REGEN ŽILINA si vyhradzuje právo odmietnuť poskytnutie služby, ak máme dôvodné podozrenie, že by mohla poškodiť vaše zdravie.</p>
 
-            <h2>7. Zodpovednosť a záručné</h2>
-            <p><strong>REGEN ŽILINA nie je medicínska klinika.</strong> Naše služby sú určené na relaxáciu, regeneráciu a podporu pohody. Nenahrádzajú služby poskytované lekárom alebo iným zdravotníckym pracovníkom.</p>
+            <h2>7. Zodpovednosť a záruky</h2>
+            <p><strong>REGEN ŽILINA nie je zdravotnícke zariadenie.</strong> Naše služby slúžia na relaxáciu, regeneráciu a podporu celkovej pohody a nenahrádzajú starostlivosť lekára ani iného zdravotníckeho pracovníka.</p>
             <p>Nezodpovedáme za:</p>
             <ul>
-                <li>Žiadne nežiaduce účinky alebo skúsenosti počas alebo po procedúre, ak ste neposkytli úplné a presné informácie o svojom zdravotnom stave</li>
-                <li>Straty alebo poškodenie osobných vecí, ktoré si prinesiete do našej kliniky</li>
-                <li>Skúsenosti z tretích strán alebo odporučenia tretích strán</li>
+                <li>Nežiaduce účinky či nepríjemné pocity počas alebo po procedúre, ak ste nám vopred neposkytli úplné a presné informácie o svojom zdravotnom stave</li>
+                <li>Stratu alebo poškodenie osobných vecí, ktoré si prinesiete do našich priestorov</li>
+                <li>Skúsenosti alebo odporúčania tretích strán</li>
             </ul>
 
-            <h2>8. Zákaz diskriminovania</h2>
-            <p>REGEN ŽILINA odmietame všetky formy diskriminácie. Naše služby sú dostupné pre všetkých bez ohľadu na rasu, farbu, pohlavie, vierou, sexuálnu orientáciu, genderovú identitu, národnosť alebo iný chránený status.</p>
+            <h2>8. Zákaz diskriminácie</h2>
+            <p>REGEN ŽILINA odmieta akúkoľvek formu diskriminácie. Naše služby sú dostupné všetkým bez ohľadu na rasu, farbu pleti, pohlavie, vierovyznanie, sexuálnu orientáciu, rodovú identitu, národnosť či iný chránený status.</p>
 
-            <h2>9. Politika bez ztráty</h2>
-            <p>Všetci zákazníci sú s nami vítaní a spolu svoju podporu budeme pestovať. Ak máte negatívnu skúsenosť, prosím, dajte nám vedieť a my sa pokúsime to vyriešiť.</p>
+            <h2>9. Spokojnosť zákazníkov</h2>
+            <p>Každého zákazníka u nás radi privítame a záleží nám na príjemnej a otvorenej atmosfére. Ak by ste mali akúkoľvek negatívnu skúsenosť, dajte nám prosím vedieť — radi ju s vami vyriešime.</p>
 
             <h2>10. Porušenie podmienok</h2>
-            <p>V prípade porušenia týchto obchodných podmienok si vyhrazujeme právo:</p>
+            <p>V prípade porušenia týchto obchodných podmienok si vyhradzujeme právo:</p>
             <ul>
-                <li>Odmietnuť budúce rezervácie bez zdôvodnenia</li>
+                <li>Odmietnuť budúce rezervácie bez uvedenia dôvodu</li>
                 <li>Zrušiť rezerváciu bez vrátenia peňazí</li>
-                <li>Podať sťažnosť na príslušné orgány v prípadoch vážneho porušenia</li>
+                <li>V prípade závažného porušenia obrátiť sa na príslušné orgány</li>
             </ul>
 
             <h2>11. Autorské práva a duševné vlastníctvo</h2>
-            <p>Všetok obsah na našej webovej stránke — vrátane textov, obrázkov, videí a logotu — je chránený autorskými právami a duševným vlastnictvom REGEN ŽILINA. Nepovoľuje sa reprodukovať, distribúovať alebo modifikovať bez písomného súhlasu.</p>
+            <p>Všetok obsah na našej webovej stránke — vrátane textov, obrázkov, videí a loga — je chránený autorským právom a je duševným vlastníctvom REGEN ŽILINA. Bez nášho písomného súhlasu ho nie je dovolené kopírovať, šíriť ani upravovať.</p>
 
             <h2>12. Zmeny obchodných podmienok</h2>
-            <p>Vyhrazujeme si právo zmeniť tieto obchodné podmienky kedykoľvek. Zmeny budú zverejnené na tejto stránke. Pokračovaním v používaní našich služieb po zverejnení zmien súhlasíte s upravenými podmienkami.</p>
+            <p>Vyhradzujeme si právo tieto obchodné podmienky kedykoľvek zmeniť. Zmeny zverejníme na tejto stránke a ich používaním po zverejnení s nimi vyjadrujete súhlas.</p>
 
             <h2>13. Právna jurisdikcia</h2>
-            <p>Tieto obchodné podmienky sú upravené právom Slovenskej republiky. Všetky spory sa budú riešiť v súlade so slovenským právom a v príslušných súdoch.</p>
+            <p>Tieto obchodné podmienky sa riadia právnym poriadkom Slovenskej republiky. Prípadné spory budú riešené v súlade so slovenským právom na príslušných súdoch.</p>
 
             <h2>14. Kontakt</h2>
             <p>V prípade akýchkoľvek otázok týkajúcich sa obchodných podmienok, kontaktujte nás:</p>

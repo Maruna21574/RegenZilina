@@ -49,7 +49,7 @@
                     </div>
                     <div>
                         <strong>Otváracie hodiny</strong>
-                        <p>Po – Pi: 9:00 – 18:00<br>So: po dohode<br>Ne: zatvorené</p>
+                        <p>Po – Pi: na objednávku<br>So: podľa dohody<br>Ne: zatvorené</p>
                     </div>
                 </div>
             </div>

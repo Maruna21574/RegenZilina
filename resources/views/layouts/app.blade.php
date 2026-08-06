@@ -187,7 +187,7 @@
                             <a href="mailto:info@regenzilina.sk" class="footer__contact-link">info@regenzilina.sk</a>
                         </p>
                         <div class="footer__hours">
-                            <span>Po–Pi</span> <span>9:00–18:00</span>
+                            <span>Po–Pi</span> <span>na objednávku</span>
                         </div>
                     </div>
                 </div>
@@ -209,7 +209,6 @@
                         <a href="{{ route('privacy') }}">Ochrana súkromia</a>
                         <a href="{{ route('terms') }}">Obchodné podmienky</a>
                         <a href="{{ route('cookies') }}">Cookies</a>
-                        <button type="button" class="footer__cookie-settings" data-cookie-settings>Nastavenia cookies</button>
                     </div>
                 </div>
             </div>
@@ -252,6 +251,17 @@
 
     <button class="scroll-top" id="scrollTop" aria-label="Späť hore">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <button class="cookie-fab" id="cookieFab" type="button" data-cookie-settings aria-label="Nastavenia cookies">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+            <path d="M8.5 8.5v.01"/>
+            <path d="M16 15.5v.01"/>
+            <path d="M12 12v.01"/>
+            <path d="M11 17v.01"/>
+            <path d="M7 14v.01"/>
+        </svg>
     </button>
 
     <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieBannerTitle" aria-describedby="cookieBannerText" hidden>
