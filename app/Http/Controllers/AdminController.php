@@ -191,7 +191,9 @@ class AdminController extends Controller
                     }
 
                     $validated['status'] = 'confirmed';
-                    Reservation::create($validated);
+                    $reservation = Reservation::create($validated);
+
+                    Mail::to($reservation->email)->send(new ReservationConfirmed($reservation));
 
                     return redirect()->route('admin.calendar', $redirectParams)
                         ->with('success', 'Rezervácia bola manuálne pridaná.');
