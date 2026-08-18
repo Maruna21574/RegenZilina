@@ -65,6 +65,12 @@
             "closes": "18:00"
         },
         "priceRange": "€€",
+        "aggregateRating": {
+            "@@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "18",
+            "bestRating": "5"
+        },
         "areaServed": {
             "@@type": "City",
             "name": "Žilina"

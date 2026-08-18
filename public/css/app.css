@@ -3692,7 +3692,7 @@ input[type="date"].form-input::-webkit-calendar-picker-indicator {
 .testi__marquee-track {
     display: flex;
     gap: 28px;
-    animation: marquee 45s linear infinite;
+    animation: marquee 90s linear infinite;
     width: max-content;
 }
 
@@ -3717,12 +3717,6 @@ input[type="date"].form-input::-webkit-calendar-picker-indicator {
     border-color: var(--green);
 }
 
-.testi__marquee-stars {
-    font-size: 16px;
-    color: var(--green);
-    letter-spacing: 2px;
-}
-
 .testi__marquee-text {
     font-size: 18px;
     color: var(--text);
@@ -3731,10 +3725,99 @@ input[type="date"].form-input::-webkit-calendar-picker-indicator {
     margin: 0;
 }
 
-.testi__marquee-name {
+/* Google reviews summary badge */
+.testi__gsummary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+
+.testi__gsummary-score {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.testi__gsummary-count {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Google review card */
+.testi__gcard-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.testi__gcard-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.testi__gcard-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.testi__gcard-name {
     font-size: 14px;
     font-weight: 600;
-    color: var(--green);
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.testi__gcard-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.testi__gcard-source svg {
+    flex-shrink: 0;
+}
+
+.testi__gcard-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.testi__gcard-time {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.testi__gcard-stars {
+    display: inline-flex;
+    gap: 1px;
+}
+
+.testi__star-icon {
+    fill: var(--border);
+}
+
+.testi__star-icon.is-filled {
+    fill: var(--gold);
 }
 
 @keyframes marquee {

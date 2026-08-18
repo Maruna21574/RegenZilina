@@ -199,87 +199,80 @@
 
 
 {{-- TESTIMONIALS --}}
+@php
+$googleReviews = [
+    ['name' => 'Zuzana Gašpieriková', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Salón má veľmi príjemnú a upokojujúcu atmosféru, kde sa človek cíti dobre už od prvého momentu. Masér Daniel je profesionál s výborným prístupom, je milý, … Viac'],
+    ['name' => 'Marharyta Pam', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Velmi pekne ďakujem za profesionálnu masáž. Príjemná atmosféra, individuálny prístup a skvelá starostlivosť mi pomohli dokonale sa uvoľniť. Masáž bola naozaj … Viac'],
+    ['name' => 'Lubos Černák', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Masáž bola top! Odbornosť ale aj príjemná komunikácia a prostredie. Prišiel som s boľavým chrbtom a po sedení som odišiel uplne uvoľnený. Dnes som sa znovu … Viac'],
+    ['name' => 'Miroslava Bucková', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Veľmi príjemná masaž. Perfekný profesionálny prístup, zhodnotenie zdravotného stavu a riešenie konkretného problému. Určite odporúčam.🙏'],
+    ['name' => 'tatiana cernakova', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Veľká spokojnosť. 😊 Cítila som sa veľmi príjemne a v dobrých rukách. Masáž mi pomohla uvoľniť stuhnuté svaly a na chvíľu vypnúť.Určite prídem znova. 💖'],
+    ['name' => 'Jakub Gazdík', 'rating' => 5, 'time' => 'pred 2 mesiacmi', 'text' => 'Odbornosť, komunikácia, príjemné prostredie. V skratke, terapeut, ktorý robí svoju prácu poctivo a venuje Vám čas a pozornosť. Pozitívne hodnotenie si plne zaslúži. :)'],
+    ['name' => 'Marek Keblovský', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Moja prvá masáž a zároveň nie posledná 💪 perfektný prístup a profesionalita. Odišiel som úplne zregenerovaný. Odporúčam'],
+    ['name' => 'Marek Svoboda', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Bol som na masáži v salóne Regen a musím povedať, že som bol veľmi spokojný. Mal som masáž s bankami, ktorá bola veľmi príjemná a zároveň mi pomohla s mojou … Viac'],
+    ['name' => 'Patrik Bačinský', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Masáž na top úrovni! 👌 Profesionálny prístup, príjemná atmosféra a odchádzal som úplne zresetovaný. Určite odporúčam a rád sa vrátim.🔥'],
+    ['name' => 'Ivana Bartošová', 'rating' => 5, 'time' => 'pred 6 mesiacmi', 'text' => 'Ocenujem profesionálny prístup, čistý a príjemný minimalistický priestor navodený na relax. Masér Daniel mi výrazne pomohol najmä v oblasti hrudnej a krčnej … Viac'],
+    ['name' => 'Ema Macková', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Profesionálny, milý prístup pána maséra. Vždy pomohol, uľavil od bolesti. Určite sa budem vracať naďalej do tychto rúk.'],
+    ['name' => 'Naďa Papánová', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'individuálny prístup, profesionalita, príjemná atmosféra už od prvého momentu, určite odporúčam a opäť prídem :)'],
+    ['name' => 'Marián Slaboň', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Skvelá skúsenosť v Žiline. Daniel rozumie anatómii, vie presne, kde uvoľniť a napraviť. Pomohol mi vrátiť sa k športu po úraze na motorke. Profesionálna robota. Môžem len odporučiť.'],
+    ['name' => 'Michal Kubík', 'rating' => 5, 'time' => 'pred 2 mesiacmi', 'text' => 'Vrelo odporúčam bol som a veľmi spokojný 👍👍👍'],
+    ['name' => 'Lenka M', 'rating' => 5, 'time' => 'pred 3 mesiacmi', 'text' => 'Príjemné prostredie, profesionálny prístup, max spokojnosť, urcite odporúčam :)'],
+    ['name' => 'Tomas Belan', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Príjemne prostredie, profesionálne jednanie a taktiež samotná masáž. Odporúčam👌👌👌'],
+    ['name' => 'Emil Gabčík', 'rating' => 4, 'time' => 'pred 5 mesiacmi', 'text' => 'Super skúsenosť, pekný prístup a zhovievavosť, určite by som pána odporúčil.'],
+    ['name' => 'miroslava sedlakova', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Masáž bola úplne úžasná, milý a profesionálny prístup, príjemné prostredie. Rada sa opäť vrátim, určite odporúčam😊'],
+];
+$avatarPalette = ['#53614a', '#7d9270', '#C9A96E', '#8a6d4f', '#6b8f8a', '#a3785f', '#4d6b5e', '#9a7d9e'];
+$reviewCount = count($googleReviews);
+$avgRating = round(array_sum(array_column($googleReviews, 'rating')) / $reviewCount, 1);
+
+$googleGLogo = '<svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>';
+$starIcon = '<path d="M12 2.5l2.9 6.06 6.6.79-4.87 4.6 1.28 6.55L12 17.27l-5.91 3.23 1.28-6.55-4.87-4.6 6.6-.79z"/>';
+@endphp
 <section class="testimonials">
     <div class="container">
         <div class="section__head anim-reveal" style="text-align:center;">
             <span class="label">Recenzie</span>
             <h2 class="h2">Čo hovoria naši klienti</h2>
+
+            <div class="testi__gsummary">
+                {!! $googleGLogo !!}
+                <span class="testi__gsummary-score">{{ str_replace('.', ',', $avgRating) }}</span>
+                <span class="testi__gcard-stars">
+                    @for($s = 1; $s <= 5; $s++)
+                        <svg class="testi__star-icon {{ $s <= round($avgRating) ? 'is-filled' : '' }}" viewBox="0 0 24 24" width="16" height="16">{!! $starIcon !!}</svg>
+                    @endfor
+                </span>
+                <span class="testi__gsummary-count">{{ $reviewCount }} recenzií na Google</span>
+            </div>
         </div>
     </div>
 
     <div class="testi__marquee anim-reveal">
         <div class="testi__marquee-track">
+            @foreach(array_merge($googleReviews, $googleReviews) as $review)
             <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Po návšteve som sa cítil uvoľnenejšie. Profesionálny prístup na úplne inej úrovni."</p>
-                <span class="testi__marquee-name">— Martin K.</span>
+                <div class="testi__gcard-head">
+                    <div class="testi__gcard-avatar" style="background: {{ $avatarPalette[crc32($review['name']) % count($avatarPalette)] }};">
+                        {{ mb_strtoupper(mb_substr($review['name'], 0, 1)) }}
+                    </div>
+                    <div class="testi__gcard-info">
+                        <span class="testi__gcard-name">{{ $review['name'] }}</span>
+                        <span class="testi__gcard-source">
+                            {!! $googleGLogo !!}
+                            Zdroj recenzie: Google
+                        </span>
+                    </div>
+                </div>
+                <div class="testi__gcard-meta">
+                    <span class="testi__gcard-stars">
+                        @for($s = 1; $s <= 5; $s++)
+                            <svg class="testi__star-icon {{ $s <= $review['rating'] ? 'is-filled' : '' }}" viewBox="0 0 24 24" width="14" height="14">{!! $starIcon !!}</svg>
+                        @endfor
+                    </span>
+                    <span class="testi__gcard-time">· {{ $review['time'] }}</span>
+                </div>
+                <p class="testi__marquee-text">{{ $review['text'] }}</p>
             </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Najlepšia športová masáž, akú som kedy mala. Prístup presne zodpovedal mojim potrebám. Odporúčam každému bežcovi."</p>
-                <span class="testi__marquee-name">— Zuzana P.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Chodím pravidelne na relaxačnú masáž. Vždy odchádzam úplne uvoľnená. Prostredie je príjemné a čisté."</p>
-                <span class="testi__marquee-name">— Eva M.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Ocenil som individuálny prístup, príjemné prostredie a dôkladnú prácu. Konečne viem, kam chodiť."</p>
-                <span class="testi__marquee-name">— Peter S.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Najlepšie peniaze, ktoré som investoval do zdravia. Super prístup, skutočný profesionál."</p>
-                <span class="testi__marquee-name">— Róbert H.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Po prvej návšteve som vedela, že sa vrátim. Konečne masáž, ktorá naozaj pomáha."</p>
-                <span class="testi__marquee-name">— Andrea Š.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Prídem vždy, keď mi dá telo zabrať. Odporúčam aj svojej rodine."</p>
-                <span class="testi__marquee-name">— Lucia K.</span>
-            </div>
-            {{-- duplikácia pre plynulý loop --}}
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Po návšteve som sa cítil uvoľnenejšie. Profesionálny prístup na úplne inej úrovni."</p>
-                <span class="testi__marquee-name">— Martin K.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Najlepšia športová masáž, akú som kedy mala. Prístup presne zodpovedal mojim potrebám. Odporúčam každému bežcovi."</p>
-                <span class="testi__marquee-name">— Zuzana P.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Chodím pravidelne na relaxačnú masáž. Vždy odchádzam úplne uvoľnená. Prostredie je príjemné a čisté."</p>
-                <span class="testi__marquee-name">— Eva M.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Ocenil som individuálny prístup, príjemné prostredie a dôkladnú prácu. Konečne viem, kam chodiť."</p>
-                <span class="testi__marquee-name">— Peter S.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Najlepšie peniaze, ktoré som investoval do zdravia. Super prístup, skutočný profesionál."</p>
-                <span class="testi__marquee-name">— Róbert H.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Po prvej návšteve som vedela, že sa vrátim. Konečne masáž, ktorá naozaj pomáha."</p>
-                <span class="testi__marquee-name">— Andrea Š.</span>
-            </div>
-            <div class="testi__marquee-item">
-                <div class="testi__marquee-stars">★★★★★</div>
-                <p class="testi__marquee-text">„Prídem vždy, keď mi dá telo zabrať. Odporúčam aj svojej rodine."</p>
-                <span class="testi__marquee-name">— Lucia K.</span>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
