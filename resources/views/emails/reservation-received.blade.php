@@ -13,20 +13,28 @@
         <td style="padding: 24px;">
             <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Služba</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; font-weight: 600; text-align: right;">{{ $reservation->service->name }}</td>
+                    <td style="padding: 8px 0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Služba</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px; font-weight: 600;">{{ $reservation->service->name }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Dátum</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; font-weight: 600; text-align: right; border-top: 1px solid #e8e5e0;">{{ $reservation->date->format('d.m.Y') }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Dátum</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px; font-weight: 600;">{{ $reservation->date->format('d.m.Y') }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Čas</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; font-weight: 600; text-align: right; border-top: 1px solid #e8e5e0;">{{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Čas</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px; font-weight: 600;">{{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Meno</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; font-weight: 600; text-align: right; border-top: 1px solid #e8e5e0;">{{ $reservation->full_name }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Meno</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px; font-weight: 600;">{{ $reservation->full_name }}</p>
+                    </td>
                 </tr>
             </table>
         </td>

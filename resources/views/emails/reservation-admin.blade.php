@@ -8,29 +8,41 @@
         <td style="padding: 24px;">
             <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Meno</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; font-weight: 600; text-align: right;">{{ $reservation->full_name }}</td>
+                    <td style="padding: 8px 0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Meno</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px; font-weight: 600;">{{ $reservation->full_name }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Telefón</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; text-align: right; border-top: 1px solid #e8e5e0;">{{ $reservation->phone }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Telefón</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px;">{{ $reservation->phone }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Email</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; text-align: right; border-top: 1px solid #e8e5e0;">{{ $reservation->email }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Email</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px;">{{ $reservation->email }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Služba</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; font-weight: 600; text-align: right; border-top: 1px solid #e8e5e0;">{{ $reservation->service->name }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Služba</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px; font-weight: 600;">{{ $reservation->service->name }}</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Dátum a čas</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; font-weight: 600; text-align: right; border-top: 1px solid #e8e5e0;">{{ $reservation->date->format('d.m.Y') }} o {{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Dátum a čas</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px; font-weight: 600;">{{ $reservation->date->format('d.m.Y') }} o {{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}</p>
+                    </td>
                 </tr>
                 @if($reservation->note)
                 <tr>
-                    <td style="padding: 8px 0; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e8e5e0;">Poznámka</td>
-                    <td style="padding: 8px 0; color: #173124; font-size: 15px; text-align: right; border-top: 1px solid #e8e5e0;">{{ $reservation->note }}</td>
+                    <td style="padding: 8px 0; border-top: 1px solid #e8e5e0;">
+                        <p style="margin: 0 0 4px; color: #8B6F47; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Poznámka</p>
+                        <p style="margin: 0; color: #173124; font-size: 15px;">{{ $reservation->note }}</p>
+                    </td>
                 </tr>
                 @endif
             </table>
