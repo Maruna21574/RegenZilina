@@ -3723,6 +3723,41 @@ input[type="date"].form-input::-webkit-calendar-picker-indicator {
     font-style: italic;
     line-height: 1.7;
     margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+}
+
+.testi__marquee-item.is-open .testi__marquee-text {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    overflow: visible;
+}
+
+.testi__marquee-track.has-open {
+    align-items: flex-start;
+    animation-play-state: paused;
+}
+
+.testi__more {
+    align-self: flex-start;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin-top: -4px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.testi__more:hover {
+    text-decoration-thickness: 2px;
 }
 
 /* Google reviews summary badge */

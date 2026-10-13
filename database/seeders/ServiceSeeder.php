@@ -13,7 +13,7 @@ class ServiceSeeder extends Seeder
             [
                 'name' => 'REGEN RELAX',
                 'slug' => 'regen-relax',
-                'duration' => 60,
+                'duration' => 50,
                 'price' => 40.00,
                 'description' => 'Relaxačná masáž zameraná na uvoľnenie tela a psychiky a na regeneráciu mysle.',
                 'category' => 'main',

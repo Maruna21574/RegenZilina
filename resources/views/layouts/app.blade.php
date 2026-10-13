@@ -68,7 +68,7 @@
         "aggregateRating": {
             "@@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "18",
+            "reviewCount": "20",
             "bestRating": "5"
         },
         "areaServed": {

@@ -172,6 +172,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =============================================
+    // GOOGLE REVIEWS - zobrazit celu recenziu
+    // =============================================
+    const reviewTrack = document.querySelector('.testi__marquee-track');
+    if (reviewTrack) {
+        const updateMoreButtons = () => {
+            reviewTrack.querySelectorAll('.testi__marquee-item').forEach(item => {
+                const text = item.querySelector('.testi__marquee-text');
+                const btn = item.querySelector('.testi__more');
+                if (!text || !btn || item.classList.contains('is-open')) return;
+                btn.hidden = text.scrollHeight <= text.clientHeight + 1;
+            });
+        };
+
+        reviewTrack.addEventListener('click', (e) => {
+            const btn = e.target.closest('.testi__more');
+            if (!btn) return;
+            const item = btn.closest('.testi__marquee-item');
+            const open = item.classList.toggle('is-open');
+            btn.textContent = open ? 'Zobraziť menej' : 'Zobraziť celú recenziu';
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            reviewTrack.classList.toggle('has-open', !!reviewTrack.querySelector('.is-open'));
+        });
+
+        updateMoreButtons();
+        window.addEventListener('load', updateMoreButtons);
+        window.addEventListener('resize', updateMoreButtons);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateMoreButtons);
+    }
+
+    // =============================================
     // MASSAGE VISUALIZATION
     // =============================================
     const mvizScene = document.querySelector('.mviz__scene');
@@ -564,4 +594,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initContactForm();
+
 });

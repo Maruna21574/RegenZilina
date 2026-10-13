@@ -40,7 +40,7 @@
                         <h3 class="svc-detail__name">REGEN RELAX</h3>
                     </div>
                     <div class="svc-detail__price-block">
-                        <span class="svc-detail__duration">60 minút</span>
+                        <span class="svc-detail__duration">50 minút</span>
                         <span class="svc-detail__price">40€</span>
                     </div>
                 </div>

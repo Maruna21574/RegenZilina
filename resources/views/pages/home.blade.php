@@ -201,24 +201,26 @@
 {{-- TESTIMONIALS --}}
 @php
 $googleReviews = [
-    ['name' => 'Zuzana Gašpieriková', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Salón má veľmi príjemnú a upokojujúcu atmosféru, kde sa človek cíti dobre už od prvého momentu. Masér Daniel je profesionál s výborným prístupom, je milý, … Viac'],
-    ['name' => 'Marharyta Pam', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Velmi pekne ďakujem za profesionálnu masáž. Príjemná atmosféra, individuálny prístup a skvelá starostlivosť mi pomohli dokonale sa uvoľniť. Masáž bola naozaj … Viac'],
-    ['name' => 'Lubos Černák', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Masáž bola top! Odbornosť ale aj príjemná komunikácia a prostredie. Prišiel som s boľavým chrbtom a po sedení som odišiel uplne uvoľnený. Dnes som sa znovu … Viac'],
-    ['name' => 'Miroslava Bucková', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Veľmi príjemná masaž. Perfekný profesionálny prístup, zhodnotenie zdravotného stavu a riešenie konkretného problému. Určite odporúčam.🙏'],
-    ['name' => 'tatiana cernakova', 'rating' => 5, 'time' => 'pred mesiacom', 'text' => 'Veľká spokojnosť. 😊 Cítila som sa veľmi príjemne a v dobrých rukách. Masáž mi pomohla uvoľniť stuhnuté svaly a na chvíľu vypnúť.Určite prídem znova. 💖'],
-    ['name' => 'Jakub Gazdík', 'rating' => 5, 'time' => 'pred 2 mesiacmi', 'text' => 'Odbornosť, komunikácia, príjemné prostredie. V skratke, terapeut, ktorý robí svoju prácu poctivo a venuje Vám čas a pozornosť. Pozitívne hodnotenie si plne zaslúži. :)'],
-    ['name' => 'Marek Keblovský', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Moja prvá masáž a zároveň nie posledná 💪 perfektný prístup a profesionalita. Odišiel som úplne zregenerovaný. Odporúčam'],
-    ['name' => 'Marek Svoboda', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Bol som na masáži v salóne Regen a musím povedať, že som bol veľmi spokojný. Mal som masáž s bankami, ktorá bola veľmi príjemná a zároveň mi pomohla s mojou … Viac'],
-    ['name' => 'Patrik Bačinský', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Masáž na top úrovni! 👌 Profesionálny prístup, príjemná atmosféra a odchádzal som úplne zresetovaný. Určite odporúčam a rád sa vrátim.🔥'],
-    ['name' => 'Ivana Bartošová', 'rating' => 5, 'time' => 'pred 6 mesiacmi', 'text' => 'Ocenujem profesionálny prístup, čistý a príjemný minimalistický priestor navodený na relax. Masér Daniel mi výrazne pomohol najmä v oblasti hrudnej a krčnej … Viac'],
+    ['name' => 'monika behanova', 'rating' => 5, 'time' => 'pred 5 dňami', 'text' => 'Ďakujem za milý a profesionálny prístup a tiež za skutočne výbornú masáž po ktorej sa cítim vždy uvoľnene a oddýchnuto. Dokonca už po prvej masáži som pocítila výrazný ústup ťažkostí, ktoré som mávala skoro každý deň. Určite odporúčam navštíviť toto miesto každému kto hľadá odbornú masáž a kde sa vám snažia aj skutočne pomôcť.'],
+    ['name' => 'MDDr.Peter Schnierer', 'rating' => 5, 'time' => 'pred týždňom', 'text' => ''],
+    ['name' => 'Zuzana Gašpieriková', 'rating' => 5, 'time' => 'pred 3 mesiacmi', 'text' => 'Salón má veľmi príjemnú a upokojujúcu atmosféru, kde sa človek cíti dobre už od prvého momentu. Masér Daniel je profesionál s výborným prístupom, je milý, pozorný a svoju prácu robí s maximálnou starostlivosťou. Masáž prispôsobil mojim potrebám a po jej skončení som sa cítila dokonale uvoľnene a plná novej energie. Určite odporúčam každému, kto hľadá kvalitné služby a skutočný oddych.'],
+    ['name' => 'Marharyta Pam', 'rating' => 5, 'time' => 'pred 3 mesiacmi', 'text' => 'Velmi pekne ďakujem za profesionálnu masáž. Príjemná atmosféra, individuálny prístup a skvelá starostlivosť mi pomohli dokonale sa uvoľniť. Masáž bola naozaj kvalitná a cítila som sa po nej oveľa lepšie. Určite odporúčam každému, kto hľadá skúseného a ochotného maséra. Ešte raz ďakujem a teším sa na ďalšiu návštevu!'],
+    ['name' => 'Lubos Černák', 'rating' => 5, 'time' => 'pred 3 mesiacmi', 'text' => 'Masáž bola top! Odbornosť ale aj príjemná komunikácia a prostredie. Prišiel som s boľavým chrbtom a po sedení som odišiel uplne uvoľnený. Dnes som sa znovu vratil v ramci prevencie. Pri mojej práci (čašník) mi tieto preventívne návštevy pomáhajú byť v kondícii pri každodennom fungovaní.'],
+    ['name' => 'Miroslava Bucková', 'rating' => 5, 'time' => 'pred 6 mesiacmi', 'text' => 'Veľmi príjemná masaž. Perfekný profesionálny prístup, zhodnotenie zdravotného stavu a riešenie konkretného problému. Určite odporúčam.🙏'],
+    ['name' => 'tatiana cernakova', 'rating' => 5, 'time' => 'pred 3 mesiacmi', 'text' => 'Veľká spokojnosť. 😊 Cítila som sa veľmi príjemne a v dobrých rukách. Masáž mi pomohla uvoľniť stuhnuté svaly a na chvíľu vypnúť.Určite prídem znova. 💖'],
+    ['name' => 'Jakub Gazdík', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Odbornosť, komunikácia, príjemné prostredie. V skratke, terapeut, ktorý robí svoju prácu poctivo a venuje Vám čas a pozornosť. Pozitívne hodnotenie si plne zaslúži. :)'],
+    ['name' => 'Marek Keblovský', 'rating' => 5, 'time' => 'pred 7 mesiacmi', 'text' => 'Moja prvá masáž a zároveň nie posledná 💪 perfektný prístup a profesionalita. Odišiel som úplne zregenerovaný. Odporúčam'],
+    ['name' => 'Marek Svoboda', 'rating' => 5, 'time' => 'pred 7 mesiacmi', 'text' => 'Bol som na masáži v salóne Regen a musím povedať, že som bol veľmi spokojný. Mal som masáž s bankami, ktorá bola veľmi príjemná a zároveň mi pomohla s mojou boľavou lopatkou. Prostredie salónu je príjemné, čisté, pekné a moderné. Celková atmosféra je veľmi uvoľňujúca. Určite odporúčam každému, kto hľadá profesionálnu a príjemnú masáž. ⭐⭐⭐⭐⭐'],
+    ['name' => 'Patrik Bačinský', 'rating' => 5, 'time' => 'pred 7 mesiacmi', 'text' => 'Masáž na top úrovni! 👌 Profesionálny prístup, príjemná atmosféra a odchádzal som úplne zresetovaný. Určite odporúčam a rád sa vrátim.🔥'],
+    ['name' => 'Ivana Bartošová', 'rating' => 5, 'time' => 'pred 8 mesiacmi', 'text' => 'Ocenujem profesionálny prístup, čistý a príjemný minimalistický priestor navodený na relax. Masér Daniel mi výrazne pomohol najmä v oblasti hrudnej a krčnej chrbtice, pracoval precízne s mobilizáciou, myofasciálnymi technikami aj spúšťovými bodmi. Výsledkom bolo hlboké uvoľnenie tela a veľká úľava pre preťažené ruky. Ako masérka a lektorka viem oceniť kvalitu práce REGEN a Daniela jednoznačne odporúčam. 👌'],
     ['name' => 'Ema Macková', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Profesionálny, milý prístup pána maséra. Vždy pomohol, uľavil od bolesti. Určite sa budem vracať naďalej do tychto rúk.'],
-    ['name' => 'Naďa Papánová', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'individuálny prístup, profesionalita, príjemná atmosféra už od prvého momentu, určite odporúčam a opäť prídem :)'],
-    ['name' => 'Marián Slaboň', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Skvelá skúsenosť v Žiline. Daniel rozumie anatómii, vie presne, kde uvoľniť a napraviť. Pomohol mi vrátiť sa k športu po úraze na motorke. Profesionálna robota. Môžem len odporučiť.'],
-    ['name' => 'Michal Kubík', 'rating' => 5, 'time' => 'pred 2 mesiacmi', 'text' => 'Vrelo odporúčam bol som a veľmi spokojný 👍👍👍'],
-    ['name' => 'Lenka M', 'rating' => 5, 'time' => 'pred 3 mesiacmi', 'text' => 'Príjemné prostredie, profesionálny prístup, max spokojnosť, urcite odporúčam :)'],
-    ['name' => 'Tomas Belan', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Príjemne prostredie, profesionálne jednanie a taktiež samotná masáž. Odporúčam👌👌👌'],
-    ['name' => 'Emil Gabčík', 'rating' => 4, 'time' => 'pred 5 mesiacmi', 'text' => 'Super skúsenosť, pekný prístup a zhovievavosť, určite by som pána odporúčil.'],
-    ['name' => 'miroslava sedlakova', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Masáž bola úplne úžasná, milý a profesionálny prístup, príjemné prostredie. Rada sa opäť vrátim, určite odporúčam😊'],
+    ['name' => 'Naďa Papánová', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'individuálny prístup, profesionalita, príjemná atmosféra už od prvého momentu, určite odporúčam a opäť prídem :)'],
+    ['name' => 'Marián Slaboň', 'rating' => 5, 'time' => 'pred 6 mesiacmi', 'text' => 'Skvelá skúsenosť v Žiline. Daniel rozumie anatómii, vie presne, kde uvoľniť a napraviť. Pomohol mi vrátiť sa k športu po úraze na motorke. Profesionálna robota. Môžem len odporučiť.'],
+    ['name' => 'Michal Kubík', 'rating' => 5, 'time' => 'pred 4 mesiacmi', 'text' => 'Vrelo odporúčam bol som a veľmi spokojný 👍👍👍'],
+    ['name' => 'Lenka M', 'rating' => 5, 'time' => 'pred 5 mesiacmi', 'text' => 'Príjemné prostredie, profesionálny prístup, max spokojnosť, urcite odporúčam :)'],
+    ['name' => 'Tomas Belan', 'rating' => 5, 'time' => 'pred 7 mesiacmi', 'text' => 'Príjemne prostredie, profesionálne jednanie a taktiež samotná masáž. Odporúčam👌👌👌'],
+    ['name' => 'Emil Gabčík', 'rating' => 4, 'time' => 'pred 7 mesiacmi', 'text' => 'Super skúsenosť, pekný prístup a zhovievavosť, určite by som pána odporúčil.'],
+    ['name' => 'miroslava sedlakova', 'rating' => 5, 'time' => 'pred 6 mesiacmi', 'text' => 'Masáž bola úplne úžasná, milý a profesionálny prístup, príjemné prostredie. Rada sa opäť vrátim, určite odporúčam😊'],
 ];
 $avatarPalette = ['#53614a', '#7d9270', '#C9A96E', '#8a6d4f', '#6b8f8a', '#a3785f', '#4d6b5e', '#9a7d9e'];
 $reviewCount = count($googleReviews);
@@ -270,7 +272,10 @@ $starIcon = '<path d="M12 2.5l2.9 6.06 6.6.79-4.87 4.6 1.28 6.55L12 17.27l-5.91 
                     </span>
                     <span class="testi__gcard-time">· {{ $review['time'] }}</span>
                 </div>
+                @if($review['text'] !== '')
                 <p class="testi__marquee-text">{{ $review['text'] }}</p>
+                <button type="button" class="testi__more" aria-expanded="false" hidden>Zobraziť celú recenziu</button>
+                @endif
             </div>
             @endforeach
         </div>
