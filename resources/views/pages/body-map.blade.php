@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'Ramená bývajú namáhané pri športe, fyzickej práci aj dlhom sedení.',
             problems: ['Stuhnutosť ramena', 'Napätie pri pohybe ruky', 'Namáhanie z tréningu alebo práce', 'Potreba regenerácie ramien'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'PIR, mäkké techniky a jemné pohybové prvky pre oblasť ramena' },
+                { name: 'REGEN THERAPY', id: 3, why: 'Akupresúra, mäkké techniky a jemné pohybové prvky pre oblasť ramena' },
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia po športovom preťažení ramena' },
                 { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť ramena' }
             ]
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'Ramená bývajú namáhané pri športe, fyzickej práci aj dlhom sedení.',
             problems: ['Stuhnutosť ramena', 'Napätie pri pohybe ruky', 'Namáhanie z tréningu alebo práce', 'Potreba regenerácie ramien'],
             services: [
-                { name: 'REGEN THERAPY', id: 3, why: 'PIR, mäkké techniky a jemné pohybové prvky pre oblasť ramena' },
+                { name: 'REGEN THERAPY', id: 3, why: 'Akupresúra, mäkké techniky a jemné pohybové prvky pre oblasť ramena' },
                 { name: 'REGEN SPORT', id: 2, why: 'Regenerácia po športovom preťažení ramena' },
                 { name: 'KINEZIOTEJPING', id: 4, why: 'Podporný doplnok pre oblasť ramena' }
             ]

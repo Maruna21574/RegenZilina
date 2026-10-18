@@ -159,7 +159,7 @@
                 <div class="svc-detail__body">
                     <div class="svc-detail__desc">
                         <p>Individuálna hodina zameraná na pohybovú regeneráciu podľa aktuálnych potrieb klienta. Na začiatku sa porozprávame o vašich potrebách a následne sa cielene venujeme vybraným oblastiam tela.</p>
-                        <p style="margin-top: 12px;">Využívame myofasciálne uvoľnenie (MFR), jemné mobilizačné techniky, mäkké techniky a hĺbkovú tkanivovú prácu. Súčasťou regenerácie mäkkých tkanív môžu byť aj uvoľňovacie techniky svalov vrátane postizometrickej relaxácie (PIR). Rozsah a kombináciu techník prispôsobujeme individuálne.</p>
+                        <p style="margin-top: 12px;">Využívame myofasciálne uvoľnenie (MFR), jemné mobilizačné techniky, mäkké techniky, akupresúru a hĺbkovú tkanivovú prácu. Rozsah a kombináciu techník prispôsobujeme individuálne.</p>
                     </div>
                     <div class="svc-detail__features">
                         <div class="svc-detail__feature">
@@ -176,7 +176,7 @@
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>PIR a mäkké tkanivové techniky</span>
+                            <span>Akupresúra a mäkké tkanivové techniky</span>
                         </div>
                         <div class="svc-detail__feature">
                             <span class="svc-detail__feature-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
